@@ -84,18 +84,12 @@ abcdefghijklmnopqrstuvxyzabcdefg
 
 ### Modern Browsers
 
-e.g.
 * Tested on the following browsers:
-    - FireFox
-    - Google Chrome
-
-It is possible Microsoft Edge will work well (because it runs on the same engine as Chrome - the V8 engine).
+    -
 
 ### Older Browsers
 
-e.g.
-Less than IE8 may suffer viewing experience. Used another stylesheet for IE browser.
-
+...
 
 ## Development Installation(s)
 
@@ -108,28 +102,21 @@ Less than IE8 may suffer viewing experience. Used another stylesheet for IE brow
 * gulp
 * gulp-html-minifier
 * gulp-dart-sass
-* autoprefixer
-* gulp-clean-css
 * gulp-postcss
 * gulp-babel@next @babel/core
 * gulp-uglify
 * gulp-terser
-* gulp-imagemin
+* gulp-imagemin (for more configuration options, see [npm package detail](https://www.npmjs.com/package/gulp-imagemin))
 * gulp-sourcemaps
 * gulp-concat
 * gulp-rename (NOT INCLUDED; Optional)
-* browser-sync
-* del (???)
-* rename
-
-Q. What version of babel you want to transpile to?
-
-* cssnano >> clean-css (as plugins for gulp-postcss)
+* del (NOT INCLUDED; Optional)
 * autoprefixer (as plugins for gulp-postcss)
+* clean-css (as plugins for gulp-postcss)
 * browser-sync
 
 ```
-npm install --save-dev gulp gulp-html-minifier gulp-dart-sass autoprefixer gulp-clean-css gulp-postcss gulp-sourcemaps gulp-uglify gulp-terser gulp-imagemin gulp-concat browser-sync
+npm install --save-dev gulp gulp-html-minifier gulp-dart-sass autoprefixer clean-css gulp-postcss gulp-sourcemaps gulp-uglify gulp-terser gulp-imagemin gulp-concat browser-sync
 ```
 
 * gulp-babel
@@ -140,6 +127,8 @@ npm install --save-dev gulp gulp-html-minifier gulp-dart-sass autoprefixer gulp-
 ```
 npm install --save-dev gulp-babel gulp-babel@next @babel/core @babel/preset-env
 ```
+
+Q. What version of babel you want to transpile to?
 
 
 ## Credits
