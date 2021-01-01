@@ -111,12 +111,12 @@ abcdefghijklmnopqrstuvxyzabcdefg
 * gulp-concat
 * gulp-rename (NOT INCLUDED; Optional)
 * del (NOT INCLUDED; Optional)
-* autoprefixer (as plugins for gulp-postcss)
+* autoprefixer (as plugins for gulp-postcss)[WARNING: use version 9.0 for compatibility with gulp-postcss]
 * clean-css (as plugins for gulp-postcss)
 * browser-sync
 
 ```
-npm install --save-dev gulp gulp-html-minifier gulp-dart-sass autoprefixer clean-css gulp-postcss gulp-sourcemaps gulp-uglify gulp-terser gulp-imagemin gulp-concat browser-sync
+npm install --save-dev gulp gulp-html-minifier gulp-dart-sass autoprefixer@9.0 clean-css gulp-postcss gulp-sourcemaps gulp-uglify gulp-terser gulp-imagemin gulp-concat browser-sync
 ```
 
 * gulp-babel
@@ -133,6 +133,8 @@ Q. What version of babel you want to transpile to?
 
 ## Credits
 
+- [Bootstrap CDN](https://www.bootstrapcdn.com/fontawesome/)
+
 ### Inspirations
 
 ...
@@ -140,7 +142,11 @@ Q. What version of babel you want to transpile to?
 
 ### Guides and Tutorials
 
-...
+- _Web Dev Simplified_ - [Advanced Button Hover Animations - CSS Only](https://youtu.be/cH0TC9gWiAg)
+- [CSS Animated Input Field - how to style custom input field with CSS](https://youtu.be/3AK3vspZvvM)
+- _Youtube_ - [Checkbox Animation Pure CSS3 Tutorial](https://youtu.be/OCOitlvl0DY)
+- _Youtube_ - [How to make Custom Animated Checkboxes with CSS](https://youtu.be/ojWA8pdT-zY)
+- _Web Dev Simplified_ - [Custom Checkbox Tutorial](https://youtu.be/YyLzwR-iXtI)
 
 ### Error Reference
 

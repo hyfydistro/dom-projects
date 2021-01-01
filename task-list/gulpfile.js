@@ -11,8 +11,6 @@ const htmlmin = require('gulp-html-minifier'),
     imagemin = require('gulp-imagemin'),
     sourcemaps = require('gulp-sourcemaps'),
     concat = require('gulp-concat'),
-    del = require('del'),
-    rename = require('rename'),
     browserSync = require('browser-sync').create();
 
 // =======
@@ -137,7 +135,7 @@ function compileSassToCss() {
     // 5. Choose a directory to save the compiled CSS.
     // 6. Stream changes to all browser.
     const plugins = [
-        autoprefixer({ overrideBrowserslist: ['ie >= 11', '> 5%'], grid: true })
+        autoprefixer({grid: true})
         // autoprefixer({ overrideBrowserslist: ['last 2 chrome version', 'last 2 firefox version', 'last 2 safari version', '> 5%'], grid: true })
     ];
 
@@ -153,6 +151,7 @@ function compileSassToCss() {
         .on('error', sass.logError)
         .pipe(postcss(plugins))
         .pipe(sourcemaps.write())
+        .pipe(concat('style.css'))
         .pipe(dest(paths.styles.sassDEST))
         .pipe(browserSync.stream());
 }
@@ -186,7 +185,7 @@ function watchDevFiles() {
 
     // Run function when any sass file changes
     watch(paths.styles.sassSRC, compileSassToCss);
-    watch(scriptWatchFiles, transpileJs);
+    watch(paths.scripts.jsSRC, transpileJs);
     watch('src/*.html').on('change', browserSync.reload);
 }
 
