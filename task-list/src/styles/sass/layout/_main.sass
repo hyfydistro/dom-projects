@@ -1,0 +1,65 @@
+@use '../base/space' as *
+
+// # DEFAULT || DESKTOP
+main
+    position: relative
+    display: flex
+    justify-content: center
+    flex-direction: column
+    max-width: 960px
+    @include tablet-padding-preset
+    .clear-btn__container
+        display: flex
+        justify-content: flex-end
+        width: 100%
+        margin-top: $desktop-space-lv-2
+        margin-bottom: $desktop-space-lv-1
+    h1
+        text-align: center
+        padding-top: $desktop-space-lv-2
+        padding-bottom: $desktop-space-lv-2
+        // ! WIP>>
+    form
+        margin: 0 auto
+        padding-top: $desktop-space-lv-1
+    //     display: flex
+    //     justify-content: center
+    //     flex-direction: column
+    // ! <<
+    .input-field
+        // width: 100%
+        // padding-top: $desktop-space-lv-1
+        padding-bottom: $desktop-space-lv-1
+        // margin-left: $desktop-space-lv-1
+        // margin-right: $desktop-space-lv-1
+    input.add-btn
+        margin-bottom: $desktop-space-lv-1
+    ul li
+        margin-bottom: $desktop-space-lv-half
+
+
+// # MOBILE
+@media screen and (max-width: 640px)
+    main
+        @include mobile-padding-preset
+        .clear-btn__container
+            margin-top: $mobile-space-lv-2
+            margin-bottom: $mobile-space-lv-1
+        h1
+            padding-top: $mobile-space-lv-2
+            padding-bottom: $mobile-space-lv-2
+            // ! WIP >>
+        // form
+        //     margin: 0 auto
+        //     max-width: 640px
+        // ! <<
+        .input-field
+            // width: 100%
+            padding-top: $mobile-space-lv-1
+            padding-bottom: $mobile-space-lv-1
+            // margin-left: $mobile-space-lv-1
+            // margin-right: $mobile-space-lv-1
+        input.add-btn
+            margin-bottom: $mobile-space-lv-1
+        ul li
+            margin-bottom: $mobile-space-lv-half

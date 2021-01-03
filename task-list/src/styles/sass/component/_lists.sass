@@ -1,0 +1,135 @@
+@use '../base/color' as color
+@use '../base/space' as *
+
+// # DEFAULT || DESKTOP
+
+ul
+    position: relative
+    display: flex
+    flex-direction: column
+
+ul li
+    list-style: none
+    position: relative
+    width: 100%
+    // display: inline
+    display: flex
+    // flex-direction: row
+    align-items: center
+    // width: 380px
+    height: 45px
+    vertical-align: middle
+
+// Icons: Checkbox-container span tag
+span.checkbox-container
+    width: 24px
+    height: 24px
+    border: 1px solid #000000
+    border-radius: 25%
+    margin-right: $desktop-space-lv-half
+    margin-left: $desktop-space-lv-half
+
+span.checkbox-container.checked::before
+    content: ''
+    position: absolute
+    transform-origin: left top
+    width: 7px
+    height: 25px
+    border-bottom: 2px solid color.$primary-color-50
+    border-right: 2px solid color.$primary-color-50
+    transform: rotate(45deg)
+    bottom: 16px
+    left: 13px // ! subject to change
+    z-index: 2
+
+span.checkbox-container.checked::after
+    content: ''
+    position: absolute
+    transform-origin: left top
+    width: 7px
+    height: 25px
+    border-bottom: 5px solid #FFFFFF
+    border-right: 5px solid #FFFFFF
+    transform: rotate(45deg)
+    bottom: 15px
+    left: 12px // ! subject to change
+    z-index: 1
+
+ul label
+    position: relative
+    width: 100%
+    cursor: pointer
+    display: flex
+    top: 7px // * stylise MANDATORY
+
+input[type="checkbox"]
+    cursor: pointer
+    opacity: 0
+    position: absolute
+    left: 4px
+    z-index: -1
+
+.collection input[type="checkbox"]:checked + label
+    text-decoration: line-through
+    color: color.$text-color-40
+
+span.checkbox-container.checked::before
+    animation: checkboxleft 0.2s ease 0s forwards
+
+span.checkbox-container.checked::after
+    animation: checkboxright 0.2s ease 0s forwards
+
+@keyframes checkboxleft
+    0%
+        width: 0
+        height: 0
+        transform-origin: left top
+    100%
+        width: 7px
+        height: 25px
+        transform-origin: center center
+
+@keyframes checkboxright
+    0%
+        width: 0
+        height: 0
+        transform-origin: left top
+    100%
+        width: 7px
+        height: 25px
+        transform-origin: center center
+
+
+// Icons: closebox-container span tag
+span.closebox-container
+    width: 24px
+    height: 24px
+    border: 1px solid color.$danger-color
+    margin-right: $desktop-space-lv-half
+    border-radius: 25%
+    &:hover
+        border: none
+        background-color: color.$danger-color
+        &::before
+            color: #FFFFFF
+
+span.closebox-container::before
+    content: "\f00d "
+    font-family: "FontAwesome"
+    position: absolute
+    top: 15px
+    color: color.$danger-color
+
+// # MOBILE
+@media screen and (max-width: 640px)
+    span.checkbox-container
+        margin-right: $mobile-space-lv-half
+        margin-left: $mobile-space-lv-half
+    span.checkbox-container.checked::before
+        left: 22px // ! subject to change
+    span.checkbox-container.checked::after
+        left: 21px // ! subject to change
+    span.closebox-container
+        margin-right: $mobile-space-lv-half
+    span.closebox-container::before
+        right: 14px
