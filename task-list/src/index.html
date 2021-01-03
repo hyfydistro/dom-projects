@@ -1,22 +1,66 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">,
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#FFFFFF">
-<meta name="author" content="Caroline Rozali">
+    <meta name="theme-color" content="#236B79">
+    <meta name="author" content="Caroline Rozali">
     <title></title>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel=stylesheet> -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel=stylesheet>
+    <!-- <link rel="stylesheet" href="all.min.css"> -->
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.webmanifest">
-<!--[if lt IE 8]>
-    <link href="style.oldie.css" rel="stylesheet">
+    <!--[if lt IE 11]>
     Please upgrade to a modern browser. [Download Google Chrome](https://www.google.com/chrome/?brand=CHBD&gclid=Cj0KCQjwvvj5BRDkARIsAGD9vlKrsJd5weM-ATHUVtg8KtOLvotH5BOcbV5Hcui7o3WkDxWBQCqBgGkaAhOvEALw_wcB&gclsrc=aw.ds)
 <![endif]-->
 </head>
+
 <body>
+    <main class="container">
+        <div class="clear-btn__container">
+            <a href="#" class="clear-tasks">Clear List</a>
+        </div>
+
+        <h1>Todo List</h1>
+
+        <div class="input-form__container">
+            <form id="task-form">
+                <div class="input-field">
+                    <input type="text" name="task" id="task" required>
+                    <label for="task">Create Tasks</label>
+                </div>
+
+                <!-- <button type="submit" class="add-btn">Add</button> -->
+                <input type="submit" value="Add" class="add-btn">
+            </form>
+        </div>
+
+        <div class="filter-form__container">
+            <div class="input-field">
+                <input type="text" name="filter" id="filter" required>
+                <label for="filter">Filter Tasks
+                    <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+                </label>
+            </div>
+            <ul class="collection">
+                <!-- ! WIP >> -->
+                <li>
+                    <!-- <i class="fa fa-square-o" aria-hidden="true"></i> -->
+                    <span class="checkbox-container" aria-hidden="true"></span>
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox"> Walk the dog.</label>
+                    <span class="closebox-container" aria-hidden="true"></span>
+                </li>
+            </ul>
+            <!-- ! << -->
+        </div>
+    </main>
 
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="sw.js"></script>
 </body>
+
 </html>
