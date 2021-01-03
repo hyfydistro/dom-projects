@@ -1,0 +1,119 @@
+@use '../base/color' as color
+@use '../base/space' as *
+
+// # DEFAULT || DESKTOP
+
+input#task,
+input#filter
+    border: none
+    outline: none
+    appearance: none
+    padding-top: $desktop-space-lv-1 // ! subject to change
+    padding-left: $desktop-space-lv-half
+    height: 60px // * Specific to Desktop Display
+    width: 100% // ! subject to change
+    font-size: 1rem // ! subject to change
+    max-width: 640px
+    background: linear-gradient(90deg, color.$primary-color-50, color.$primary-color-50) center bottom/0 2px no-repeat, linear-gradient(90deg, #ccc, #ccc) left bottom/100% 2px no-repeat, linear-gradient(90deg, #fff, #fff) left bottom/100% no-repeat
+    transition: background-size 0.3s ease
+
+#task,
+#filter
+    border-radius: 3px
+
+.input-field
+    position: relative
+    font-size: 1rem
+
+// "placeholder"
+label[for="filter"],
+label[for="task"]
+    position: absolute
+    left: $desktop-space-lv-half // ! subject to change
+    top: 34% // ! subject to change
+    color: color.$text-color-40
+    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease
+
+input#task:valid + label,
+input#task:focus + label,
+input#filter:focus + label,
+input#filter:valid + label
+    top: $desktop-space-lv-half
+    font-size: 12px  // ! subject to change
+    color: color.$primary-color-70
+
+#task:valid,
+#task:focus,
+#filter:valid,
+#filter:focus
+    background-size: 100% 2px, 100% 2px, 100%
+
+label[for="filter"]
+    width: 100%
+    display: flex
+    justify-content: space-between
+
+// Icon: Search / Magnify-glasses
+label[for="filter"]::after
+    content: "\f002"
+    font-family: "FontAwesome"
+    position: absolute
+    right:  $mobile-space-lv-1
+    bottom: 4px
+    color: color.$secondary-color-30
+    font-size: 1rem
+
+input#filter:focus + label[for="filter"]::after,
+input#filter:valid + label[for="filter"]::after
+    top: 0
+    display: none
+
+// input#filter::after
+//     // content: "\f002"
+//     content: "\f00c"
+//     // position: abolsute
+//     // display: relative
+//     // left: 100px
+//     width: 24px
+//     height: 24px
+//     color: cyan
+
+// i.fa.fa-search
+//     position: relative
+//     padding-right: $mobile-space-lv-1
+//     color: color.$secondary-color-30
+
+// input#filter:focus + label i.fa.fa-search,
+// input#filter:valid + label i.fa.fa-search
+//     top: 15px
+//     // top: none
+//     display: none
+//     font-size: 1rem  // ! subject to change
+
+// # POLYFILLS
+// input:-webkit-autofill,
+// input:-webkit-autofill:hover,
+// input:-webkit-autofill:focus,
+// input:-webkit-autofill:active
+//     -webkit-box-shadow: 0 0 0 30px white inset !important
+
+// # MOBILE
+@media screen and (max-width: 640px)
+    input#task,
+    input#filter
+        padding-top: $mobile-space-lv-1
+        padding-left: $mobile-space-lv-half
+        height: 45px // * Specific to Mobile Display
+
+    // "placeholder"
+    label[for="filter"],
+    label[for="task"]
+        left: $mobile-space-lv-half // ! subject to change
+        top: 50% // ! subject to change
+
+    input#task:valid + label,
+    input#task:focus + label,
+    input#filter:focus + label,
+    input#filter:valid + label
+        top: $mobile-space-lv-1
+        font-size: 10px  // ! subject to change
