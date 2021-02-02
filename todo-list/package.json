@@ -1,0 +1,35 @@
+{
+  "name": "Todo-List",
+  "author": "hyfydistro <hyfydistro@outlook.com>",
+  "contributors": [],
+  "version": "1.0.0",
+  "description": "A light-medium weight Todo-List web app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "autoprefixer": "^9.0.2",
+    "browser-sync": "^2.26.14",
+    "clean-css": "^4.2.3",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-html-minifier": "^0.1.8",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.0.1",
+    "gulp-uglify": "^3.0.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "not IE <= 11",
+    "maintained node versions"
+  ],
+  "license": "MIT"
+}
