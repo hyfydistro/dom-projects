@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFFFFF">
+<meta name="author" content="Caroline Rozali">
+    <title></title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- FontAwesome 4.7 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+<!--[if lt IE 8]>
+    Please upgrade to a modern browser. [Download Google Chrome](https://www.google.com/chrome/?brand=CHBD&gclid=Cj0KCQjwvvj5BRDkARIsAGD9vlKrsJd5weM-ATHUVtg8KtOLvotH5BOcbV5Hcui7o3WkDxWBQCqBgGkaAhOvEALw_wcB&gclsrc=aw.ds)
+<![endif]-->
+</head>
+<body>
+    <header>
+        <nav>
+            <button class="form-task__btn text__btn" type="button"><span class="inner-btn"><p><i class="fa fa-plus" aria-hidden="true"></i>Form Task</p></span></button>
+            <h1>Todo-List</h1>
+
+            <!-- ? Designed to scale option corner -->
+            <!-- <ul class="settings__dropdown">
+                <button class="show-clear-list__btn icon__btn" type="button">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+                <li><a class="clear-list__btn" href="#"><h3><span class="text-correction">Clear List</span></h3></a></li>
+            </ul> -->
+            <div class="settings__dropdown">
+                <ul>
+                    <li><button class="show-clear-list__btn icon__btn" type="button">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                        <ul>
+                            <li>
+                                <a class="clear-list__btn" href="#"><h3><span class="text-correction">Clear List</span></h3></a></li>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!--
+        class names
+        - icon__btn
+        - icon__decoration
+     -->
+
+    <main>
+        <div class="add-task__wrapper">
+            <input class="add-task__input" type="text" placeholder="e.g. Walk the dog">
+            <button class="add-task__btn block__btn"><h3><span><i class="fa fa-plus" aria-hidden="true"></i>Add Task</span></h3></button>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="sw.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+@use '../base/space' as space;
+@use '../base/color' as *;
+
+
+.add-task__wrapper {
+    padding-top: space.$desktop-space-lv-2;
+}
+
+.add-task__input {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid $text-color-40;
+    padding: 11px space.$desktop-space-lv-half; // ! due to change: 11px
+}
+
+.add-task__input:focus {
+    border-color: $primary-color-50;
+}
+
+
+@media screen and (max-width: 576px) {
+    .add-task__wrapper {
+        padding-top: space.$mobile-space-lv-2;
+    }
+
+    .add-task__input {
+        padding: 11px space.$mobile-space-lv-half;
+    }
+}

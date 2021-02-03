@@ -1,0 +1,218 @@
+// ==========
+// TYPOGRAPHY
+// ==========
+
+// # TYPEFACE #1
+@font-face {
+    font-family: "quicksand";
+    src: local("./fonts/quicksand") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "quicksand";
+    src: local("./fonts/quicksand") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+// # TYPEFACE #2
+@font-face {
+    font-family: "myanmar text";
+    src: local("./fonts/myanmar-text") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face  {
+    font-family: "myanmar text";
+    src: local("./fonts/") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+// ! e.g. >>
+// FONT FACE
+$primary-fontface: "quicksand", sans-serif,'Tahoma';
+$secondary-fontface: "myanmar text", sans-serif,'Arial';
+$text-fontface: "myanmar text", sans-serif,'Arial';
+
+// BASE VALUE
+$mobile-base-font-size: 15px;
+$desktop-base-font-size: 20px;
+
+// MDOULAR-SCALE
+// Mobile
+$mobile-header-text-scale-ratio: 1.2;
+$mobile-body-text-scale-ratio: 1.2;
+// Tablet-Desktop
+$desktop-header-text-scale-ratio: 1.2;
+$desktop-body-text-scale-ratio: 1.2;
+// ! <<
+
+// ================================
+// # DEFAULT || DESKTOP VIEW
+// ================================
+// Font base: 20px
+
+// Modular Scale: 1.2
+
+// h1 - 34.56px | 1.728em
+// h2 - 28.8px | 1.44em
+// h3 - 24px | 1.2em
+// p - 20px | 1em
+// caption -
+
+// ? Consider:
+// Type
+// - letter spacing / tracking
+// Media query
+// - max-height
+
+html {
+    font-size: $desktop-base-font-size;
+    h1 {
+        font-family: "quicksand";
+        font-weight: normal;
+        line-height: calc(1rem * #{$desktop-header-text-scale-ratio} * #{$desktop-header-text-scale-ratio} * #{$desktop-header-text-scale-ratio} * 1.1);
+        text-transform: uppercase;
+    }
+    h2 {
+        font-family: "quicksand";
+        font-weight: normal;
+        line-height: calc(1rem * #{$desktop-header-text-scale-ratio} * #{$desktop-header-text-scale-ratio} * 1.1);
+    }
+    h3 {
+        font-family: "quicksand";
+        font-weight: normal;
+    }
+    p {
+        font-family: "myanmar text";
+        font-weight: normal;
+        font-size: $desktop-base-font-size;
+        line-height: 1.5;
+    }
+    .btn, ul li {
+        font-family: "myanmar text";
+    }
+    header {
+        h1 {
+            font-size: calc(1rem * #{$desktop-header-text-scale-ratio} * #{$desktop-header-text-scale-ratio} * #{$desktop-header-text-scale-ratio});
+        }
+        h2 {
+            font-size: calc(1rem * #{$desktop-header-text-scale-ratio} * #{$desktop-header-text-scale-ratio});
+        }
+        h3, .btn {
+            font-size: calc(1rem * #{$desktop-header-text-scale-ratio});
+        }
+    }
+    main {
+        h1 {
+            font-size: calc(1rem * #{$desktop-body-text-scale-ratio} * #{$desktop-body-text-scale-ratio} * #{$desktop-body-text-scale-ratio});
+        }
+        h2 {
+            font-size: calc(1rem * #{$desktop-body-text-scale-ratio} * #{$desktop-body-text-scale-ratio});
+        }
+        h3 {
+            font-size: calc(1rem * #{$desktop-body-text-scale-ratio});
+        }
+    }
+    footer {
+        p {
+            font-size: 10px;
+        }
+    }
+}
+
+// # Font Styles
+.text-bold {
+    font-weight: bold;
+}
+
+// ========================
+// # TABLET VIEW AND LIMITS
+// ========================
+// Font base: 20px
+
+// Modular Scale: 1.2
+
+// h1 - 34.56px | 1.728em
+// h2 - 28.8px | 1.44em
+// h3 - 24px | 1.2em
+// p - 20px | 1em
+// caption -
+
+@media screen and (max-width: 768px) {
+
+}
+
+// styles go here
+
+
+// ========================
+// # MOBILE VIEW AND LIMITS
+// ========================
+// Font base: 15px
+
+// Modular Scale: 1.2
+
+// h1 - 25.92px | 1.728em
+// h2 - 21.6px | 1.44em
+// h3 - 18px | 1.2em
+// p - 15
+// caption -
+
+@media screen and (max-width: 576px) {
+    html {
+        font-size: $mobile-base-font-size;
+        p {
+            font-size: $mobile-base-font-size;
+        }
+        header {
+            h1 {
+                font-size: calc(1rem * #{$mobile-header-text-scale-ratio} * #{$mobile-header-text-scale-ratio} * #{$mobile-header-text-scale-ratio});
+                // font-weight: bold;
+                text-transform: none;
+                line-height: calc(1rem * #{$mobile-header-text-scale-ratio} * #{$mobile-header-text-scale-ratio} * #{$mobile-header-text-scale-ratio} * 1.1);
+            }
+            h2 {
+                font-size: calc(1rem * #{$mobile-header-text-scale-ratio} * #{$mobile-header-text-scale-ratio});
+                line-height: calc(1rem * #{$mobile-header-text-scale-ratio} * #{$mobile-header-text-scale-ratio} * 1.1);
+            }
+            h3 {
+                font-size: calc(1rem * #{$mobile-header-text-scale-ratio});
+            }
+        }
+        main {
+            h1 {
+                font-size: calc(1rem * #{$mobile-body-text-scale-ratio} * #{$mobile-body-text-scale-ratio} * #{$mobile-body-text-scale-ratio});
+            }
+            h2 {
+                font-size: calc(1rem * #{$mobile-body-text-scale-ratio} * #{$mobile-body-text-scale-ratio});
+            }
+            h3 {
+                font-size: calc(1rem * #{$mobile-body-text-scale-ratio});
+            }
+        }
+        footer {
+            p {
+                font-size: $mobile-base-font-size;
+            }
+        }
+    }
+
+    span.text-correction {
+        position: relative;
+        display: block;
+        height: 14px;
+        top: -2px
+    }
+
+    // ! WIP >>
+    span.inner-btn {
+        position: relative;
+        top: -6px;
+    }
+    // ! <<
+}

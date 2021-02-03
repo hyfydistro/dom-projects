@@ -1,0 +1,11 @@
+@use '../base/space' as space;
+
+main {
+    @include space.tablet-margin-preset;
+}
+
+@media screen and (max-width: 576px) {
+    main {
+        @include space.mobile-margin-preset;
+    }
+}

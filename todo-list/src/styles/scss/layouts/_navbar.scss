@@ -1,0 +1,47 @@
+@use '../base/space' as space;
+
+header {
+    @include space.mobile-margin-preset;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    // height: 64px; // ! due to change
+    margin-bottom: space.$desktop-space-lv-2;
+
+    .form-task__btn {
+        justify-self: flex-start;
+    }
+
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .settings__dropdown {
+        justify-self: flex-end;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    nav {
+        margin-bottom: space.$mobile-space-lv-2;
+        height: 64px;
+    }
+}
+
+@media screen and (max-width: 395px) {
+    nav h1 {
+        display: block;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+    }
+}
