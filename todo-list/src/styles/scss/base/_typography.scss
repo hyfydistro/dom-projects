@@ -1,3 +1,5 @@
+@use '../base/color' as *;
+
 // ==========
 // TYPOGRAPHY
 // ==========
@@ -23,6 +25,7 @@
     src: local("./fonts/myanmar-text") format("truetype");
     font-weight: normal;
     font-style: normal;
+    letter-spacing: 2px;
 }
 
 @font-face  {
@@ -30,6 +33,7 @@
     src: local("./fonts/") format("truetype");
     font-weight: bold;
     font-style: normal;
+    letter-spacing: 2px;
 }
 
 // ! e.g. >>
@@ -76,7 +80,6 @@ html {
         font-family: "quicksand";
         font-weight: normal;
         line-height: calc(1rem * #{$desktop-header-text-scale-ratio} * #{$desktop-header-text-scale-ratio} * #{$desktop-header-text-scale-ratio} * 1.1);
-        text-transform: uppercase;
     }
     h2 {
         font-family: "quicksand";
@@ -87,13 +90,15 @@ html {
         font-family: "quicksand";
         font-weight: normal;
     }
-    p {
+    p, span {
         font-family: "myanmar text";
         font-weight: normal;
         font-size: $desktop-base-font-size;
         line-height: 1.5;
     }
-    .btn, ul li {
+    .btn,
+    ul li,
+    span {
         font-family: "myanmar text";
     }
     header {
@@ -128,6 +133,12 @@ html {
 // # Font Styles
 .text-bold {
     font-weight: bold;
+}
+
+.text-date,
+.text-memo {
+    color: $text-color-60;
+    line-height: 1.5;
 }
 
 // ========================
@@ -166,9 +177,11 @@ html {
 @media screen and (max-width: 576px) {
     html {
         font-size: $mobile-base-font-size;
-        p {
+        // ! WIP - Watch for change in Responsive Design (Desktop View): list span tag "label-text" >>
+        p, span {
             font-size: $mobile-base-font-size;
         }
+        // ! <<
         header {
             h1 {
                 font-size: calc(1rem * #{$mobile-header-text-scale-ratio} * #{$mobile-header-text-scale-ratio} * #{$mobile-header-text-scale-ratio});
