@@ -2,18 +2,88 @@
 @use '../base/color' as *;
 @use '../base/space' as space;
 
-// RESET
+// # MAIN BUTTON COMPONENTS
 button {
+    // RESET
     border: none;
     background-color: #FFFFFF;
+    // DEFAULT
+    cursor: pointer;
+}
+
+.text__btn {
+    height: 56px;
+}
+
+.block__btn {
+    display: block;
+    padding: 15px auto;
+    width: 100%;
+    height: 56px;
+    border-radius: 15px;
+}
+
+.form-task__btn {
+    border: solid 1px $primary-color-65;
+    padding: 15px 15px;
+    border-radius: 15px;
+    color: $primary-color-65;
+}
+
+.form-task__btn:hover,
+.form-task__btn:focus {
+    background: $primary-color-65;
+    color: $primary-color-05;
+}
+
+.form-task__btn:active {
+    background-color: $primary-color-50;
 }
 
 .add-task__btn {
+    color: $primary-color-05;
+    background-color: $primary-color-70;
     margin-top: space.$desktop-space-lv-1;
 }
 
 
+.add-task__btn:hover {
+    color: $primary-color-05;
+    background-color: $primary-color-80;
+}
+
+.add-task__btn:active {
+    color: $primary-color-05;
+    background-color: $primary-color-60;
+}
+
+// Plus Icon
+// Use Case:
+// - Form Task
+.fa-plus {
+    font-size: 22px;
+    margin-right: 10px;
+    // margin-right: space.$desktop-space-lv-half;
+    position: relative;
+    top: 1px;
+}
+
 // ! WIP >>
+
+// Trash Icon
+// Use Case:
+// - Clear List button
+// - "Yes, Delete List" button
+.fa-trash {
+    color: $text-color-60;
+    cursor: pointer;
+    font-size: 20px;
+    width: 46px;
+    padding: {
+        top: 14.5px;
+        bottom: 14.5px;
+    };
+}
 .fa-trash {
     color: $text-color-60;
     cursor: pointer;
@@ -26,21 +96,121 @@ button {
     // color: $primary-color-70;
 }
 
-// .settings__dropdown:hover > li,
-// .settings__dropdown:focus > li,
-// .settings__dropdown:active > li {
-//     display: inline;
-// }
+// # CTA: clear-list
+// Container "settings__dropdown"
+.settings__dropdown {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+}
+
+// Remove default list styles
+.settings__dropdown ul,
+.settings__dropdown ul ul {
+    list-style: none;
+}
+
+// ANIMATIONS (Pseudo Code)
+a.clear-list__btn:hover {
+    background: $primary-color-05;
+    color: $primary-color-70;
+}
+
+// ANIMATIONS (Pseudo Code)
+.settings__dropdown ul li ul li:hover,
+.settings__dropdown ul li ul li:focus,
+.settings__dropdown ul li ul li:active {
+    background: $primary-color-05;
+    color: $primary-color-70;
+}
+
+.settings__dropdown ul li ul {
+    display: none;
+}
+
+.settings__dropdown ul li:hover > ul,
+.settings__dropdown ul li:focus > ul,
+.settings__dropdown ul li:active > ul {
+    display: block;
+}
+
+// Match "trash" Icon Size - 36w x 36h
+.settings__dropdown ul {
+    width: 46px;
+    height: 46px;
+}
+
+// Containing the "trash button" Icon and its components
+.settings__dropdown ul li .show-clear-list__btn {
+    position: relative;
+    display: inline;
+    width: 46px;
+    height: 46px;
+
+}
+
+.settings__dropdown ul li {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    text-align: center;
+}
+
+// ANIMATIONS (Pseudo Codes)
+.settings__dropdown ul li .show-clear-list__btn i:hover {
+    // ! Color that holds
+    background: $primary-color-05;
+    color: $primary-color-70;
+}
+
+// # CTA: Text "Clear List" button
+// * Stylize Dropdown
+.settings__dropdown ul ul {
+    position: absolute;
+    top: 48px;
+    // right: -10px;
+    right: 0px;
+    min-height: 52.2px;
+    min-width: 111px;
+}
+
+.settings__dropdown ul li ul li {
+    min-height: 52.2px;
+    min-width: 111px;
+}
+
+// anchor tag "Clear List" button
+// * Hotfix center text "Clear List"
+a.clear-list__btn {
+    // width: 100%;
+    // height: 100%;
+    color: $text-color-90; // ? Under Considerations vs. #000000 vs. lighter shade
+    position: absolute;
+    // top: 0;
+    top: -12px;
+    left: -1px;
+    transform: translate(0%, 25%);
+    padding: {
+        top: 7px;
+        bottom: 7px;
+        right: 15px;
+        left: 15px;
+    };
+    border: 1px solid $text-color-20;
+}
+
+.settings__dropdown ul,
+.settings__dropdown ul ul {
+    // border: 1px solid red;
+}
+
 
 // ! WIP <<
 
 
 @media screen and (max-width: 576px) {
     // # MAIN BUTTON COMPONENTS
-    button {
-        cursor: pointer;
-    }
-
     .text__btn {
         // ? Redundant or not?, see at index.html file too (that's accompanied with 'form-task__btn')
         // padding: {
@@ -53,50 +223,20 @@ button {
     }
 
     .block__btn {
-        display: block;
         padding: 14px auto;
-        width: 100%;
         height: 42px;
         border-radius: 14px;
     }
 
     .form-task__btn {
-        border: solid 1px $primary-color-65;
         // padding: 14px 28px;
         padding: 14px 14px;
         border-radius: 14px;
-        color: $primary-color-65;
-    }
-
-    .form-task__btn:hover,
-    .form-task__btn:focus {
-        background: $primary-color-65;
-        color: $primary-color-05;
-    }
-
-    // ? Change :Active to color oriented UI/UX (?)
-    .form-task__btn:active {
-        position: relative;
-        top: 2px;
-        left: 2px;
     }
 
     .add-task__btn {
-        color: $primary-color-05;
-        background-color: $primary-color-70;
+        margin-top: space.$mobile-space-lv-1;
     }
-
-
-    .add-task__btn:hover {
-        color: $primary-color-05;
-        background-color: $primary-color-80;
-    }
-
-    .add-task__btn:active {
-        color: $primary-color-05;
-        background-color: $primary-color-60;
-    }
-
 
     // # CTA ICONS
     .icon__btn {
@@ -104,49 +244,44 @@ button {
         height: 36px;
     }
 
-    .fa {
-        // width: 36px;
-    }
-
     // Plus Icon
     // Use Case:
     // - Form Task
     .fa-plus {
+        font-size: 19px;
+        // margin-right: 10px;
+        margin-right: space.$mobile-space-lv-half;
+        top: 1.5px;
+    }
+
+    .add-task__btn .fa-plus {
+        top: 2px;
+    }
+
+    // Trash Icon
+    // Use Case:
+    // - Clear List button
+    // - "Yes, Delete List" button
+    .fa-trash {
         font-size: 18px;
-        margin-right: 10px;
-        position: relative;
+        width: 36px;
+        padding: {
+            top: 10px;
+            bottom: 10px;
+        };
+        // height: 36px;
+    }
+
+    // Pin / Thumb-Tack Icon
+    .fa-thumb-tack {
+
     }
 
     // ! WIP >>
     // # CTA: clear-list
-    // Container "settings__dropdown"
-    .settings__dropdown {
-        position: relative;
-        display: inline-block;
-        // # Width of "trash Icon" too
-        width: 46px;
-        height: 46px;
-        // ! add width
-        // ! add margin
-    }
-
-    // Remove default list styles
-    .settings__dropdown ul,
-    .settings__dropdown ul ul {
-        list-style: none;
-    }
-
     // ! Testing >>
-    .settings__dropdown ul,
-    .settings__dropdown ul ul {
-    }
 
     // ! << Testing
-
-    // Preset for Psuedo:hover
-    .settings__dropdown ul ul {
-        // display: none;
-    }
 
     // Match "trash" Icon Size - 36w x 36h
     .settings__dropdown ul {
@@ -183,18 +318,22 @@ button {
     // * Stylize Dropdown
     .settings__dropdown ul ul {
         position: absolute;
-        top: 37px;
-        right: -1px;
+        // top: 37px;
+        top: 36px;
+        // right: -1px;
+        right: 0px;
         min-height: 41.3px;
-        min-width: 115px;
+        // min-width: 115px;
+        min-width: 90px;
     }
 
     .settings__dropdown ul li ul li {
         min-height: 41.3px;
-        min-width: 115px;
+        // min-width: 115px;
+        min-width: 90px;
     }
 
-    // "anchor" tag button
+    // anchor tag "Clear List" button
     // * Hotfix center text "Clear List"
     a.clear-list__btn {
         // width: 100%;
@@ -214,87 +353,30 @@ button {
         border: 1px solid $text-color-20;
     }
 
-    // ANIMATIONS (Pseudo Code)
-    a.clear-list__btn:hover {
-        background: $primary-color-05;
-        color: $primary-color-70;
-    }
 
-    // ANIMATIONS (Pseudo Code)
-    .settings__dropdown ul li ul li:hover {
-        background: $primary-color-05;
-        color: $primary-color-70;
-    }
-
-    .settings__dropdown ul li ul {
-        display: none;
-    }
-
-    .settings__dropdown ul li:hover > ul,
-    .settings__dropdown ul li:focus > ul,
-    .settings__dropdown ul li:active > ul {
-        display: block;
-    }
-
-
-
-
-    // ul.settings__dropdown {
-    //     list-style: none;
-    //     position: relative;
-    //     display: inline-block;
-    // }
-
-    // ul li {
-    //     position: absolute;
-    //     display: none;
-    //     // ! Testing Area >>
-    //     // display: inline;
-    //     // ! <<
-    //     top: 38px;
-    //     // left: -54px;
-    //     left: -80px;
-    //     // bottom: 0;
-    //     min-height: 41.3px;
-    //     // min-width: 90px;
-    //     // min-width: 137px;
-    //     min-width: 115px;
-    //     // max-height: 14px;
-    //     list-style: none;
-    //     padding: 14px;
-    //     border: 1px solid $text-color-20;
-    //     // ! Add box-shadow
-    //     z-index: 1;
-    //     cursor: pointer;
-    // }
-
-    // ul li:hover,
-    // ul li:focus,
-    // ul li:active {
-        // background: $primary-color-05;
-    // }
-
-    // ul li:hover a,
-    // ul li:focus a,
-    // ul li:active a {
-    //     color: $primary-color-70;
-    // }
-
-
-
-    // Trash Icon
-    // Use Case:
-    // - Clear List button
-    // - "Yes, Delete List" button
-    .fa-trash {
-        font-size: 18px;
-        width: 36px;
-        padding: {
-            top: 10px;
-            bottom: 10px;
-        };
-        // height: 36px;
-    }
 
     // ! WIP <<
+
+    // # CTA: Edit Task
+    .fa-ellipsis-h {
+        // width: 16px;
+        // height: 4px;
+        // ? Redefine padding dimension with width and height? Check Affinity
+        // padding: 46px;
+        color: $text-color-60;
+    }
+
+    // ANIMATIONS (Pseudo Code)
+    .ellipses__wrapper:hover > .fa-ellipsis-h,
+    .ellipses__wrapper:focus > .fa-ellipsis-h,
+    .ellipses__wrapper:active > .fa-ellipsis-h {
+        color: $primary-color-70;
+    }
+
+    .ellipses__wrapper:hover,
+    .ellipses__wrapper:focus,
+    .ellipses__wrapper:active {
+        background: $primary-color-05;
+    }
+
 }
