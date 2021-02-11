@@ -90,7 +90,10 @@ html {
         font-family: "quicksand";
         font-weight: normal;
     }
-    p, span {
+    p,
+    span,
+    a,
+    #due-date__input {
         font-family: "myanmar text";
         font-weight: normal;
         font-size: $desktop-base-font-size;
@@ -98,7 +101,8 @@ html {
     }
     .btn,
     ul li,
-    span {
+    .module__label,
+    .color-change__selection--none::before {
         font-family: "myanmar text";
     }
     header {
@@ -119,7 +123,8 @@ html {
         h2 {
             font-size: calc(1rem * #{$desktop-body-text-scale-ratio} * #{$desktop-body-text-scale-ratio});
         }
-        h3 {
+        h3,
+        .module__label {
             font-size: calc(1rem * #{$desktop-body-text-scale-ratio});
         }
     }
@@ -178,7 +183,9 @@ html {
     html {
         font-size: $mobile-base-font-size;
         // ! WIP - Watch for change in Responsive Design (Desktop View): list span tag "label-text" >>
-        p, span {
+        p,
+        span,
+        #due-date__input {
             font-size: $mobile-base-font-size;
         }
         // ! <<
@@ -204,7 +211,8 @@ html {
             h2 {
                 font-size: calc(1rem * #{$mobile-body-text-scale-ratio} * #{$mobile-body-text-scale-ratio});
             }
-            h3 {
+            h3,
+            .module__label {
                 font-size: calc(1rem * #{$mobile-body-text-scale-ratio});
             }
         }
