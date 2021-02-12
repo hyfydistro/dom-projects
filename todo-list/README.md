@@ -178,6 +178,8 @@ n/a
 - _Web Dev Simplified_ - [Custom Checkbox Tutorial](https://youtu.be/YyLzwR-iXtI)
 - [How TO - Toggle Switch](https://www.w3schools.com/howto/howto_css_switch.asp)
 - [How to create a Simple Dropdown menu using html css](https://youtu.be/Kctqguvf2FM)
+- [horizontal-centering-of-an-absolute-element](https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/)
+
 ### Error Reference
 
 n/a
