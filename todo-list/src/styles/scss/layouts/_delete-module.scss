@@ -1,0 +1,102 @@
+@use '../base/space' as space;
+@use '../base/color' as *;
+
+.delete-confirmation__module {
+    display: block;
+    position: absolute;
+    max-width: 768px;
+    top: space.$desktop-space-lv-2;
+    border-radius: 25px;
+    background-color: #ffffff;
+    z-index: 100;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 999;
+}
+
+// * Used with Script
+.delete-confirmation__module.hidden {
+    display: none;
+}
+
+.delete-confirmation__header {
+    padding-top: space.$desktop-space-lv-2;
+    padding-bottom: space.$desktop-space-lv-2;
+    background-color: $warning-color-50;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    color: $warning-color-05;
+    position: relative;
+    text-align: center;
+}
+
+// .module__title {
+.module__title--delete {
+    // position: absolute;
+    // top: space.$desktop-space-lv-2;
+    // left: 0;
+    // right: 0;
+    // margin: auto;
+    // overflow: auto;
+    // width: 50%;
+    // height: 50%;
+    // text-align: center;
+    position: relative;
+    display: block;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // top: space.$desktop-space-lv-2;
+    // left: 0;
+    // right: 0;
+    // margin: auto;
+    // overflow: auto;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.delete-confirmation__content {
+    text-align: center;
+    padding-top: space.$desktop-space-lv-2;
+    padding-bottom: space.$desktop-space-lv-2;
+}
+
+.delete-confirmation__selection {
+    padding-top: space.$desktop-space-lv-2;
+    padding-bottom: space.$desktop-space-lv-2;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+    .delete-confirmation__module {
+        @include space.tablet-margin-preset;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .delete-confirmation__module {
+        @include space.mobile-margin-preset;
+    }
+
+    .delete-confirmation__module {
+        top: space.$mobile-space-lv-2;
+    }
+
+    .delete-confirmation__header {
+        padding-top: space.$mobile-space-lv-2;
+        padding-bottom: space.$mobile-space-lv-2;
+    }
+
+    .delete-confirmation__content {
+        padding-top: space.$mobile-space-lv-2;
+        padding-bottom: space.$mobile-space-lv-2;
+    }
+
+    .delete-confirmation__selection {
+        padding-top: space.$mobile-space-lv-2;
+        padding-bottom: space.$mobile-space-lv-2;
+    }
+}
