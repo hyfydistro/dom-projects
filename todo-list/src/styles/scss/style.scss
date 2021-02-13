@@ -5,8 +5,11 @@
 @use 'base/color';
 
 /* LAYOUTS */
+@use 'layouts/app-container';
 @use 'layouts/navbar';
 @use 'layouts/main';
+@use 'layouts/form-module';
+@use 'layouts/delete-module';
 
 /* COMPONENTS */
 
