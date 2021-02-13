@@ -26,6 +26,7 @@ label {
 
     input[type="checkbox"] {
         display: none;
+        // visibility: hidden;
 
         + .text-label:before {
             content: "\f096";
@@ -78,6 +79,49 @@ input[type="checkbox"]:checked + .text-label {
     text-decoration: line-through;
     color: $text-color-60;
 }
+
+// # Form Task
+// Task Input
+#task__input {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid $text-color-40;
+    padding: 11px space.$desktop-space-lv-half; // ! due to change: 11px
+    color: $text-color-60;
+}
+
+#task__input:focus {
+    border-color: $primary-color-50;
+}
+
+// Due Date Input
+#due-date__input {
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid $text-color-40;
+    padding: 11px space.$desktop-space-lv-half; // ! due to change: 11px
+    color: $text-color-60; // ? Color display is off
+}
+
+#due-date__input:focus {
+    border-color: $primary-color-50;
+}
+
+// Memo Input
+#memo__input {
+    display: block;
+    border-radius: 10px;
+    border: 1px solid $text-color-40;
+    padding: 11px space.$desktop-space-lv-half; // ! due to change: 11px
+    color: $text-color-60; // ? Color display is off
+}
+
+#memo__input:focus {
+    border-color: $primary-color-50;
+}
+
+
 
 @media screen and (max-width: 576px) {
     // # "+ Add Task" Input
