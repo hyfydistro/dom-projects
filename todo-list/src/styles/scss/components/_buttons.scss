@@ -2,6 +2,9 @@
 @use '../base/color' as *;
 @use '../base/space' as space;
 
+// todo
+// create edit form delete button
+
 // # MAIN BUTTON COMPONENTS
 button {
     // RESET
@@ -229,7 +232,6 @@ a.clear-list__btn {
 
 // Form Task Module - "+ Add Task" button
 .add-task-form__btn {
-
 }
 
 .add-task-form__btn {
@@ -247,6 +249,92 @@ a.clear-list__btn {
     color: $primary-color-05;
     background-color: $primary-color-60;
 }
+
+.edit-task-form__btn--delete {
+    color: $warning-color-05;
+    background-color: $warning-color-60;
+}
+
+.edit-task-form__btn--delete .fa-trash {
+    color: $warning-color-05;
+}
+
+// ANIMATIONS
+.edit-task-form__btn--delete:hover {
+    background-color: $warning-color-70;
+}
+
+.edit-task-form__btn--delete:active {
+    background-color: $warning-color-50;
+}
+
+// Module: Clear List
+// "No, Keep List" button
+.delete-confirmation-cancel__btn {
+    position: relative;
+    height: 54px;
+    border: 1px solid $text-color-60;
+    border-radius: 14px;
+    padding: 15px 30px;
+    // border: 1px solid red;
+    color: $text-color-60;
+    // top: 10px; // * Hotfix: align with heading "Form Task"
+    text-align: center;
+}
+
+.delete-confirmation-cancel__btn--text {
+    position: relative;
+    top: -5px;
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+}
+
+// ANIMATIONS
+.delete-confirmation-cancel__btn:hover,
+.delete-confirmation-cancel__btn:active {
+    color: #ffffff;
+    background-color: $text-color-60;
+}
+
+// "Yes, Delete List" button
+.delete-confirmation-confirm__btn {
+    position: relative;
+    height: 54px;
+    border-radius: 14px;
+    padding: 15px 30px;
+    // top: 10px; // * Hotfix: align with heading "Form Task"
+    text-align: center;
+    background-color: $warning-color-60;
+}
+
+.delete-confirmation-confirm__btn--text {
+    position: relative;
+    top: -5px;
+    top: -13px;
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    color: $warning-color-05;
+}
+
+.delete-confirmation-confirm__btn--text .fa-trash {
+    color: $warning-color-05;
+    width: auto;
+    margin-right: space.$desktop-space-lv-half;
+
+}
+
+
+// ANIMATIONS
+.delete-confirmation-confirm__btn:hover {
+    background-color: $warning-color-70;
+}
+
+.delete-confirmation-confirm__btn:active {
+    background-color: $warning-color-50;
+}
+
 
 @media screen and (max-width: 576px) {
     // # MAIN BUTTON COMPONENTS
@@ -388,4 +476,25 @@ a.clear-list__btn {
     }
 
     // ! WIP <<
+
+    // Module: Clear List
+    // "No, Keep List" button
+    .delete-confirmation-cancel__btn {
+        height: 42px;
+        padding: 14px 28px;
+    }
+
+    .delete-confirmation-cancel__btn--text {
+        font-size: 18px;
+    }
+
+    // "Yes, Delete List" button
+    .delete-confirmation-confirm__btn {
+        height: 42px;
+        padding: 14px 28px;
+    }
+
+    .delete-confirmation-confirm__btn--text {
+        font-size: 18px !important;
+    }
 }
