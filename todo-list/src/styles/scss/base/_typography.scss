@@ -102,7 +102,8 @@ html {
     .btn,
     ul li,
     .module__label,
-    .color-change__selection--none::before {
+    .color-change__selection--none::before,
+    textarea#memo__input {
         font-family: "myanmar text";
     }
     header {
@@ -112,7 +113,8 @@ html {
         h2 {
             font-size: calc(1rem * #{$desktop-header-text-scale-ratio} * #{$desktop-header-text-scale-ratio});
         }
-        h3, .btn {
+        h3,
+        .btn {
             font-size: calc(1rem * #{$desktop-header-text-scale-ratio});
         }
     }
@@ -124,7 +126,8 @@ html {
             font-size: calc(1rem * #{$desktop-body-text-scale-ratio} * #{$desktop-body-text-scale-ratio});
         }
         h3,
-        .module__label {
+        .module__label,
+        a.module-update__btn span {
             font-size: calc(1rem * #{$desktop-body-text-scale-ratio});
         }
     }
@@ -212,7 +215,8 @@ html {
                 font-size: calc(1rem * #{$mobile-body-text-scale-ratio} * #{$mobile-body-text-scale-ratio});
             }
             h3,
-            .module__label {
+            .module__label,
+            a.module-update__btn span {
                 font-size: calc(1rem * #{$mobile-body-text-scale-ratio});
             }
         }
