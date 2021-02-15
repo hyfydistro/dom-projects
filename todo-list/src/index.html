@@ -70,13 +70,13 @@
                 <!-- ! WIP >> elements may change >> -->
                 <div class="list__wrapper">
                     <!-- # Main List -->
+                    <!-- temp -->
+                    <!-- list-component #1 - Present
+                - Pin to the Top
+                - Due Date
+                - Sticky Color
+            -->
                     <div class="main-list">
-                        <!-- temp -->
-                        <!-- list-component #1 - Present
-                    - Pin to the Top
-                    - Due Date
-                    - Sticky Color
-                -->
                         <div class="list-component">
                             <div class="list-component__first-block">
                                 <div class="pin__wrapper"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>
@@ -141,7 +141,6 @@
                                 <div class="ellipses__wrapper"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
                                 <div class="sticky-color invisible"></div>
                             </div>
-                            <!-- ? class name reconsideration... -->
                             <div class="list-component__second-block hidden">
                                 <span class="text-memo"></span>
                             </div>
@@ -198,14 +197,16 @@
                     </div>
                     <div class="delete-confirmation__content">
                         <div class="delete-cofirmation__text-container">
-                            <span class="delete-confirmation__text">Are you sure you want to Delete the entire list?</span>
+                            <span class="delete-confirmation__text">Are you sure you want to Delete the entire
+                                list?</span>
                         </div>
                         <div class="delete-confirmation__selection">
                             <button class="delete-confirmation-cancel__btn" type="button">
                                 <h3><span class="delete-confirmation-cancel__btn--text">No, Keep List</span></h3>
                             </button>
                             <button class="delete-confirmation-confirm__btn" type="button">
-                                <h3><span class="delete-confirmation-confirm__btn--text"><i class="fa fa-trash" aria-hidden="true"></i>Yes, Delete List</span></h3>
+                                <h3><span class="delete-confirmation-confirm__btn--text"><i class="fa fa-trash"
+                                            aria-hidden="true"></i>Yes, Delete List</span></h3>
                             </button>
                         </div>
                     </div>
@@ -213,7 +214,7 @@
 
                 <!-- Module - Form Task -->
                 <div class="form-task__wrapper hidden">
-                <!-- <div class="form-task__wrapper hidden"> -->
+                    <!-- <div class="form-task__wrapper hidden"> -->
                     <div class="form-task__module">
                         <div class="form-task__header">
                             <a class="module-cancel__btn" href="#">Cancel</a>
@@ -299,7 +300,7 @@
                         - .edit-task__wrapper
                         - .edit-task__module
                      -->
-                     <div class="edit-task__module">
+                    <div class="edit-task__module">
                         <div class="edit-task__header">
                             <a class="module-cancel__btn" href="#">Cancel</a>
                             <h2 class="module__title text-bold">Edit Task</h2>
@@ -387,8 +388,9 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="sw.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+    <script src="script.js" defer></script>
+    <script type="text/javascript" src="sw.js" defer></script>
 </body>
 
 </html>
