@@ -215,6 +215,7 @@ a.clear-list__btn {
     // ? Redefine padding dimension with width and height? Check Affinity
     // padding: 46px;
     color: $text-color-60;
+    pointer-events: none;
 }
 
 // ANIMATIONS (Pseudo Code)
