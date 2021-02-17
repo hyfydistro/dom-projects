@@ -14,7 +14,7 @@ Objective:
 * "Completed" or checked tasks update UI
 
 Optional:
-- [ ] Add PWA
+- [x] Add PWA
 
 ### Clear Task List Performance
 
@@ -93,22 +93,23 @@ Mobile, Tablet (lesser priority) and Desktop (main) devices.
     - [x] Color accessible
 
 - [x] Old Browser Support - **OBS** [pending]
-(specify which IE version LOL)
+(specify which IE version LOL) :rofl:
 
 - [ ] IE 8
 - [ ] IE 9
 - [ ] IE 10
 - [x] IE 11
+    > Heading is off position. Unable to open "Clear List" option.
 
-- [ ] Progressive Web Application **PWA** [pending]
-    - [ ] Service Worker
-    - [ ] Manifest file
+- [x] Progressive Web Application **PWA**
+    - [x] Service Worker
+    - [x] Manifest file
 
 - [ ] Graceful Degradation / *Progressive Enhancement* **PE** [pending]
     - CSS PE
     - JavaScript PE
 
-- [ ] Available at GitHub Pages [pending]
+- [x] Available at GitHub Pages
 
 
 ## Browsers Compatibility
@@ -116,8 +117,11 @@ Mobile, Tablet (lesser priority) and Desktop (main) devices.
 ### Modern Browsers
 
 * Tested on the following browsers:
-    - Firefox
-    - Google Chrome
+    - Firefox :star: :star: :star: :star:
+    - Google Chrome :star: :star: :star: :star:
+    - Microsoft Edge :star: :star: :star: :star: :star:
+
+> Surprisingly, Microsoft Edge best our big title browsers. :flushed:
 
 ### Older Browsers
 

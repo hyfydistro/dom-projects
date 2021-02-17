@@ -11,19 +11,19 @@ const mq = window.matchMedia("(min-width: 600px)");
 
 if (mq.matches) {
     // Move h1 .title element
-    console.log("pass - is Large Screen");
+    // console.log("pass - is Large Screen");
     mainElement.insertAdjacentElement('afterbegin', h1Title);
 }
 
 function isLargeScreen() {
     if (window.innerWidth >= 600) {
         // Move h1 .title element
-        console.log("pass - is Large Screen");
+        // console.log("pass - is Large Screen");
         mainElement.insertAdjacentElement('afterbegin', h1Title);
 
     } else {
         formTaskBtn.insertAdjacentElement('afterend', h1Title);
-        console.log("pass - is Large Screen Flex");
+        // console.log("pass - is Large Screen Flex");
     }
 }
 
