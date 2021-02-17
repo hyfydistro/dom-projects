@@ -189,7 +189,8 @@ function watchDevFiles() {
 
 function concatCSS() {
     const plugins = [
-        cleancss({compatibility: 'ie11'})
+        // cleancss({compatibility: 'IE11'})
+        cleancss
     ];
 
     return src(paths.styles.cssSRC)
