@@ -27,13 +27,10 @@
                         </span></button>
                     <h1 class="title">Todo-List</h1>
 
-                    <!-- ? Designed to scale option corner -->
-                    <!-- <ul class="settings__dropdown">
-                <button class="show-clear-list__btn icon__btn" type="button">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                </button>
-                <li><a class="clear-list__btn" href="#"><h3><span class="text-correction">Clear List</span></h3></a></li>
-            </ul> -->
+                    <!--
+                        * Designed to scale option corner
+                            - settings__dropdown
+                    -->
                     <div class="settings__dropdown">
                         <ul>
                             <li><button class="show-clear-list__btn icon__btn" type="button">
@@ -53,12 +50,6 @@
                 </nav>
             </header>
 
-            <!--
-        class names
-        - icon__btn
-        - icon__decoration
-     -->
-
             <main>
                 <div class="add-task__wrapper">
                     <input class="add-task__input" type="text" placeholder="e.g. Walk the dog">
@@ -67,130 +58,17 @@
                     </button>
                 </div>
 
-                <!-- ! WIP >> elements may change >> -->
                 <div class="list__wrapper">
                     <!-- # Main List -->
-                    <!-- temp -->
-                    <!-- list-component #1 - Present
-                - Pin to the Top
-                - Due Date
-                - Sticky Color
-            -->
-                    <div class="main-list">
-                        <div class="list-component">
-                            <div class="list-component__first-block">
-                                <div class="pin__wrapper"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>
-                                <!-- checkbox -->
-                                <label class="checkbox">
-                                    <input type="checkbox" id="check">
-                                    <span class="text-label">Walk the dog</span>
-                                </label>
-                                <!-- <div class="checkbox"></div>
-                        <div class="list__text"></div> -->
-                                <div class="due-date"><span class="text-date">01/01/21</span></div>
-                                <div class="ellipses__wrapper"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
-                                <div class="sticky-color yellow"></div>
-                            </div>
-                            <!-- ? class name reconsideration... -->
-                            <div class="list-component__second-block hidden">
-                                <span class="text-memo"></span>
-                            </div>
-                        </div>
-
-                        <!-- list-component #2 - Present
-                    - Due Date
-                    - Sticky Color
-                    - Memo
-                -->
-                        <div class="list-component">
-                            <div class="list-component__first-block">
-                                <div class="pin__wrapper"><i class="fa fa-thumb-tack invisible" aria-hidden="true"></i>
-                                </div>
-                                <!-- checkbox -->
-                                <label class="checkbox">
-                                    <input type="checkbox" id="check">
-                                    <span class="text-label">Water the plant</span>
-                                </label>
-                                <!-- <div class="checkbox"></div>
-                        <div class="list__text"></div> -->
-                                <div class="due-date"><span class="text-date">01/01/21</span></div>
-                                <div class="ellipses__wrapper"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
-                                <div class="sticky-color green"></div>
-                            </div>
-                            <!-- ? class name reconsideration... -->
-                            <div class="list-component__second-block hidden">
-                                <span class="text-memo">Use 60ml of water</span>
-                            </div>
-                        </div>
-
-                        <!-- list-component #3 - Present
-                    - n/a
-                -->
-                        <div class="list-component">
-                            <div class="list-component__first-block">
-                                <div class="pin__wrapper"><i class="fa fa-thumb-tack invisible" aria-hidden="true"></i>
-                                </div>
-                                <!-- checkbox -->
-                                <label class="checkbox">
-                                    <input type="checkbox" id="check">
-                                    <span class="text-label">Water the plant again</span>
-                                </label>
-                                <!-- <div class="checkbox"></div>
-                        <div class="list__text"></div> -->
-                                <div class="due-date invisible"><span class="text-date">01/01/21</span></div>
-                                <div class="ellipses__wrapper"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
-                                <div class="sticky-color invisible"></div>
-                            </div>
-                            <div class="list-component__second-block hidden">
-                                <span class="text-memo"></span>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="main-list"></div>
 
                     <!-- # Complete List -->
                     <div class="completed-list">
                         <h2>Completed</h2>
-                        <!-- temp
-                                - text crossed
-                                - checkbox checked
-                                -->
-                        <!-- BLUEPRINT -->
-                        <!-- <div class="list__first-block">
-                    <div class="pin__wrapper"></div>
-                    <div class="checkbox"></div>
-                    <div class="list__text list__text--crossed"></div>
-                    <div class="due-date"></div>
-                    <div class="ellipses__wrapper"></div>
-                </div>
-                <div class="list__second-block hidden"></div> -->
-
-                        <div class="list-component">
-                            <div class="list-component__first-block">
-                                <div class="pin__wrapper"><i class="fa fa-thumb-tack invisible" aria-hidden="true"></i>
-                                </div>
-                                <!-- checkbox -->
-                                <label class="checkbox">
-                                    <input type="checkbox" id="check" checked>
-                                    <span class="text-label">Walk the dog</span>
-                                </label>
-                                <!-- <div class="checkbox"></div>
-                        <div class="list__text"></div> -->
-                                <div class="due-date"><span class="text-date">01/01/21</span></div>
-                                <div class="ellipses__wrapper"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
-                                <div class="sticky-color invisible"></div>
-                            </div>
-                            <!-- ? class name reconsideration... -->
-                            <div class="list-component__second-block hidden">
-                                <span class="text-memo"></span>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <!-- ! WIP << elements may change << -->
 
-                <!-- Module - Delete List -->
-                <!-- todo
-                    - add trash icon -->
+                <!-- # Module - Delete List -->
                 <div class="delete-confirmation__module hidden">
                     <div class="delete-confirmation__header">
                         <h2 class="module__title--delete text-bold">Clear List</h2>
@@ -212,9 +90,8 @@
                     </div>
                 </div>
 
-                <!-- Module - Form Task -->
+                <!-- # Module - Form Task -->
                 <div class="form-task__wrapper hidden">
-                    <!-- <div class="form-task__wrapper hidden"> -->
                     <div class="form-task__module">
                         <div class="form-task__header">
                             <a class="module-cancel__btn" href="#">Cancel</a>
@@ -231,7 +108,6 @@
                             </div>
                             <div class="due-date__container">
                                 <label for="due-date__input">
-                                    <!-- <i class="fa fa-calendar" aria-hidden="true"></i> -->
                                     <div class="icon__wrapper"><img src="images/calendar-icon.png" alt=""
                                             class="calendar-icon"></div>
                                     <span class="module__label">Due Date</span>
@@ -251,7 +127,6 @@
                                     <div class="icon__wrapper"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>
                                     <span class="module__label">Pin to the Top</span>
                                 </label>
-                                <!-- CTA toggle -->
                                 <label class="switch" for="form-pin__input">
                                     <input type="checkbox" id="form-pin__input">
                                     <span class="slider"></span>
@@ -289,17 +164,12 @@
                                     <h3><span><i class="fa fa-plus" aria-hidden="true"></i>Add Task</span></h3>
                                 </button>
                             </div>
-                            <!-- <button class="del__btn"></button> -->
                         </div>
                     </div>
                 </div>
 
-                <!-- Module - Edit Task -->
+                <!-- # Module - Edit Task -->
                 <div class="edit-task__wrapper hidden">
-                    <!-- Change
-                        - .edit-task__wrapper
-                        - .edit-task__module
-                     -->
                     <div class="edit-task__module">
                         <div class="edit-task__header">
                             <a class="module-cancel__btn" href="#">Cancel</a>
@@ -317,7 +187,6 @@
                             </div>
                             <div class="due-date__container">
                                 <label for="due-date__input">
-                                    <!-- <i class="fa fa-calendar" aria-hidden="true"></i> -->
                                     <div class="icon__wrapper"><img src="images/calendar-icon.png" alt=""
                                             class="calendar-icon"></div>
                                     <span class="module__label">Due Date</span>
@@ -337,7 +206,6 @@
                                     <div class="icon__wrapper"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>
                                     <span class="module__label">Pin to the Top</span>
                                 </label>
-                                <!-- CTA toggle -->
                                 <label class="switch" for="edit-pin__input">
                                     <input type="checkbox" id="edit-pin__input">
                                     <span class="slider"></span>
@@ -375,20 +243,17 @@
                                     <h3><span><i class="fa fa-trash" aria-hidden="true"></i>Delete</span></h3>
                                 </button>
                             </div>
-                            <!-- <button class="del__btn"></button> -->
                         </div>
                     </div>
                 </div>
 
-                <!-- Module Overlay -->
-                <!-- <div class="overlay__module hidden"></div> -->
+                <!-- # Module Overlay -->
                 <div class="overlay__module hidden"></div>
 
             </main>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
     <script src="script.js" defer></script>
     <script type="text/javascript" src="sw.js" defer></script>
 </body>
