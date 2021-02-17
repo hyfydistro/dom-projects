@@ -1,40 +1,26 @@
 @use '../base/space' as space;
 @use '../base/color' as *;
 
-// todo
-// fix sapcing for nav, header, main and .app-container and .app-wrapper
-
 body {
-    // background: $background-color;
     background-color: bisque;
 }
 
 .app-container {
     background: #FFFFFF;
-    // max-width: 992px;
     max-width: 768px;
     width: 100%;
     height: auto;
-    // height: 200vh;
     display: flex;
     justify-content: center;
-    // align-items: center;
-    // flex-direction: column;
     margin: 0 auto;
 }
-
-// .app-wrapper {}
 
 .app-wrapper {
     width: 100%;
 }
 
-// ! WIP - change to 768px ? >>
 @media screen and (max-width: 768px) {
-// @media screen and (max-width: 640px) {
-    // .app-wrapper {
-    //     width: 100%;
-    // }
+
 }
 
 @media screen and (min-width: 600px) {
@@ -44,7 +30,7 @@ body {
     }
 
     h1.title {
-        // Use script to move to new position
+        // * Used with Script
         position: relative;
         display: block;
         text-align: center;
@@ -63,10 +49,7 @@ body {
 
 @media screen and (max-width: 576px) {
     .app-container{
-        // max-width: 992px;
         height: auto;
-        // padding-top: space.$desktop-space-lv-4;
-        // padding-bottom: space.$desktop-space-lv-4;
         padding-top: 0;
         padding-bottom: 0;
 

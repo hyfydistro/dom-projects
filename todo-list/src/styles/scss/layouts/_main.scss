@@ -2,17 +2,10 @@
 @use '../base/color' as *;
 
 // - dimensions
-// - margins spacing
-
-// todo - see below or type "todo" in search bar
-
-// main {
-//     @include space.tablet-margin-preset;
-// }
+// - margins and spacing
 
 .app-container {
     padding-bottom: space.$desktop-space-lv-5;
-    // margin-bottom: space.$desktop-space-lv-5;
 }
 
 .add-task__wrapper {
@@ -29,7 +22,6 @@
 .list-component__first-block {
     display: flex;
     align-items: center;
-    // height: 24px;
     height: 36px;
     margin-left: 32px;
 }
@@ -63,7 +55,6 @@
 .list-component .pin__wrapper {
     display: inline-block;
     width: 14.1px;
-    // height: 17.5px;
     height: 24px; // height of first list block
     text-align: center;
     margin-right: space.$mobile-space-lv-1;
@@ -79,7 +70,6 @@
 
 // Checkbox Icon
 label {
-    // height: 24px;
     input[type="checkbox"] {
         + .text-label:before {
             display: inline-block;
@@ -90,7 +80,6 @@ label {
 
 // Due-Date Container
 .due-date{
-    // display: inline-block;
     display: flex;
     align-items: end; // ? Further testing with more lists needed
     height: 24px;
@@ -138,15 +127,10 @@ label {
     background-color: $sticky-color-4;
 }
 
-// ! WIP -testing needs to be done >>
-
 // Memo block
 .list-component__second-block {
     display: block;
 }
-
-
-// !<<
 
 // # For Script to Handle
 
@@ -159,16 +143,6 @@ label {
     visibility: hidden;
 }
 
-// todo
-// ! WIP
-// - fit whole screen
-// - make below modules only
-.overlay__module {
-    // ! add grey color
-}
-
-
-// ! WIP >>
 @media screen and (min-width: 768px) {
     main {
         @include space.tablet-margin-preset;
@@ -176,19 +150,7 @@ label {
     }
 }
 
-// @media screen and (min-width: 640px) {
-//     main {
-//         @include space.tablet-margin-preset;
-//         max-width: 640px;
-//     }
-// }
-// ! <<
-
 @media screen and (max-width: 576px) {
-    // main {
-    //     @include space.mobile-margin-preset;
-    // }
-
     .add-task__wrapper {
         @include space.mobile-margin-preset;
         padding: {

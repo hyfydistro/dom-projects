@@ -2,11 +2,7 @@
 @use '../base/color' as *;
 
 // - dimensions
-// - margins spacing
-
-// todo see below
-// change to delete Button for Edit Form
-// Rename file to _form-modules.scss
+// - margins and spacing
 
 // ===============================
 // # Form Module - Main Components
@@ -32,8 +28,6 @@
 // Module Header
 .form-task__header,
 .edit-task__header {
-    // position: relative;
-    // display: block;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -43,7 +37,7 @@
 }
 
 .form-task__header {
-    background: $primary-color-10; // ! due to change
+    background: $primary-color-10;
 }
 
 .edit-task__header {
@@ -53,15 +47,12 @@
 // *Hotfix: hacks to get it to center
 .module__title {
     position: absolute;
-    // top: 21px;
     top: space.$desktop-space-lv-2;
     left: 0;
-    // bottom: 0;
     right: 0;
     margin: auto;
     overflow: auto;
     width: 50%;
-    // height: 50%;
     text-align: center;
 }
 
@@ -79,9 +70,6 @@ a.module-cancel__btn:hover {
 }
 
 a.module-update__btn {
-    // display: flex;
-    // justify-content: center;
-    // align-items: end;
     display: inline-block;
     text-align: center;
     padding: 14px 28px;
@@ -102,6 +90,8 @@ a.module-update__btn span {
     color: $primary-color-05;
     top: 4px;
 }
+
+
 // Module Form
 // Features:
 // - Label height: 40.8px for Mobile
@@ -129,9 +119,6 @@ a.module-update__btn span {
     background-color: #ffffff;
     border-radius: 25px;
     z-index: 100;
-    // left: 50%;
-    // margin-left: -384px;
-    // Horizontal Centering of an absolute element
     right: 0;
     left: 0;
     margin: auto;
@@ -150,7 +137,6 @@ a.module-update__btn span {
 .edit-task__form .color-change__label {
     display: flex;
     align-items: center;
-    // height: 53.8px;
     height: 40.8px;
 }
 
@@ -187,6 +173,7 @@ input#due-date__input {
     justify-content: space-between;
     align-items: center;
 }
+
 
 // ====================================
 // # Form Module - Indvidual Components
@@ -247,7 +234,6 @@ input#due-date__input {
     display: inline-block;
     width: 61.4px;
     height: 36px;
-    // padding: 56px;
 }
 
 /* Hide default HTML checkbox */
@@ -282,20 +268,14 @@ input#due-date__input {
     border-radius: 999px;
 }
 
-// input.form-pin__input:checked + .slider,
-// input.edit-pin__input:checked + .slider {
 input:checked + .slider {
     background-color: $primary-color-40;
 }
 
-// input.form-pin__input:focus + .slider,
-// input.edit-pin__input:focus + .slider {
 input:focus + .slider {
     box-shadow: 0 0 1px $primary-color-40;
 }
 
-// input.form-pin__input:checked + .slider:before,
-// input.edit-pin__input:checked + .slider:before {
 input:checked + .slider:before {
     transform: translateX(26.4px);
 }
@@ -329,13 +309,8 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
-.color-change__circle:hover {
-    // border-color: $primary-color-40;
-    // border: 2px solid $primary-color-40;
-    // transform: scale(1.2);
-}
-
 // ANIMATION: SELECTED, CLICKED, CHECKED
+// ? Unsure if satisfied with ANIMATIONS...
 .color-change__selection input[type="radio"] {
     display: none;
     &:checked + label {
@@ -397,10 +372,7 @@ input:checked + .slider:before {
     color: $text-color-60;
     transform: translate(2px, 12px);
     font-size: 15px; // * Hotfix: for consistency text size in Responsive Design
-    // background: #000000;
-    // width: 40px;
-    // height: 40px;
-    transition: none !important; // ! Not Working
+    // transition: none !important; // ! Not Working
 }
 
 
@@ -408,8 +380,6 @@ input:checked + .slider:before {
     .form-task__module,
     .edit-task__module {
         position: relative;
-        // right: auto;
-        // left: auto;
     }
 
     .form-task__wrapper,
@@ -452,7 +422,6 @@ input:checked + .slider:before {
         margin: auto;
         overflow: auto;
         width: 50%;
-        // height: 50%;
         text-align: center;
     }
 

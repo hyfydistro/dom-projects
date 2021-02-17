@@ -36,7 +36,6 @@
     letter-spacing: 2px;
 }
 
-// ! e.g. >>
 // FONT FACE
 $primary-fontface: "quicksand", sans-serif,'Tahoma';
 $secondary-fontface: "myanmar text", sans-serif,'Arial';
@@ -53,7 +52,7 @@ $mobile-body-text-scale-ratio: 1.2;
 // Tablet-Desktop
 $desktop-header-text-scale-ratio: 1.2;
 $desktop-body-text-scale-ratio: 1.2;
-// ! <<
+
 
 // ================================
 // # DEFAULT || DESKTOP VIEW
@@ -68,11 +67,8 @@ $desktop-body-text-scale-ratio: 1.2;
 // p - 20px | 1em
 // caption -
 
-// ? Consider:
-// Type
+// ! Due to poor font medium, the following was adjusted with CSS positionint properties (e.g. TRBL, transform: translate(), etc.)
 // - letter spacing / tracking
-// Media query
-// - max-height
 
 html {
     font-size: $desktop-base-font-size;
@@ -166,8 +162,6 @@ html {
 
 }
 
-// styles go here
-
 
 // ========================
 // # MOBILE VIEW AND LIMITS
@@ -234,10 +228,8 @@ html {
         top: -2px
     }
 
-    // ! WIP >>
     span.inner-btn {
         position: relative;
         top: -6px;
     }
-    // ! <<
 }

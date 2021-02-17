@@ -1,14 +1,8 @@
 @use '../base/space' as space;
 
-
-// ! WIP >>
 header {
     @include space.tablet-margin-preset;
-    // max-width: 640px;
 }
-
-// ! WIP >>
-
 
 nav {
     position: relative;
@@ -16,7 +10,6 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    // height: 64px; // ! due to change
     margin-bottom: space.$desktop-space-lv-2;
 
     .form-task__btn {
@@ -36,9 +29,7 @@ nav {
 }
 
 @media screen and (min-width: 768px) {
-    // ! Change position of h1 tag "todo-list"
-    // - margin top / bottom
-    // - with script reposition
+
 }
 
 @media screen and (max-width: 576px) {
@@ -51,7 +42,6 @@ nav {
 @media screen and (max-width: 450px) {
     header {
         @include space.mobile-margin-preset;
-
     }
 
     nav h1 {

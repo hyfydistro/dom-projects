@@ -12,7 +12,7 @@
     width: 100%;
     border-radius: 10px;
     border: 1px solid $text-color-40;
-    padding: 11px space.$desktop-space-lv-half; // ! due to change: 11px
+    padding: 11px space.$desktop-space-lv-half;
 }
 
 .add-task__input:focus {
@@ -26,8 +26,6 @@ label {
 
     input[type="checkbox"] {
         display: none;
-        // visibility: hidden;
-
         + .text-label:before {
             content: "\f096";
             font-family: "FontAwesome";
@@ -37,24 +35,15 @@ label {
             text-transform: none;
             line-height: 1.5;
             color: $text-color-20;
-            // ! WIP >>
             width: 24px;
-            // height: 24px;
             font-size: 30px;
-            // font-size: $desktop-base-font-size;
             vertical-align: middle;
-
-            // ? add text center
-            // ! <<
         }
 
         &:checked + .text-label:before {
-            // ! WIP - fix space moving check and uncheck >>
-            // content: "\f046";
             content: "\f00c";
             color: $primary-color-50;
             animation: tick 180ms;
-            // ! <<
         }
     }
 }
@@ -87,7 +76,7 @@ input[type="checkbox"]:checked + .text-label {
     width: 100%;
     border-radius: 10px;
     border: 1px solid $text-color-40;
-    padding: 11px space.$desktop-space-lv-half; // ! due to change: 11px
+    padding: 11px space.$desktop-space-lv-half;
     color: $text-color-60;
 }
 
@@ -100,8 +89,8 @@ input[type="checkbox"]:checked + .text-label {
     display: inline-block;
     border-radius: 10px;
     border: 1px solid $text-color-40;
-    padding: 11px space.$desktop-space-lv-half; // ! due to change: 11px
-    color: $text-color-60; // ? Color display is off
+    padding: 11px space.$desktop-space-lv-half;
+    color: $text-color-60;
 }
 
 #due-date__input:focus {
@@ -113,14 +102,13 @@ input[type="checkbox"]:checked + .text-label {
     display: block;
     border-radius: 10px;
     border: 1px solid $text-color-40;
-    padding: 11px space.$desktop-space-lv-half; // ! due to change: 11px
-    color: $text-color-60; // ? Color display is off
+    padding: 11px space.$desktop-space-lv-half;
+    color: $text-color-60;
 }
 
 #memo__input:focus {
     border-color: $primary-color-50;
 }
-
 
 
 @media screen and (max-width: 576px) {

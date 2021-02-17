@@ -2,9 +2,6 @@
 @use '../base/color' as *;
 @use '../base/space' as space;
 
-// todo
-// create edit form delete button
-
 // # MAIN BUTTON COMPONENTS
 button {
     // RESET
@@ -65,12 +62,9 @@ button {
 .fa-plus {
     font-size: 22px;
     margin-right: 10px;
-    // margin-right: space.$desktop-space-lv-half;
     position: relative;
     top: 1px;
 }
-
-// ! WIP >>
 
 // Trash Icon
 // Use Case:
@@ -89,13 +83,6 @@ button {
 .fa-trash {
     color: $text-color-60;
     cursor: pointer;
-}
-
-.fa-trash:hover,
-.fa-trash:focus,
-.fa-trash:active {
-    // background: $primary-color-05;
-    // color: $primary-color-70;
 }
 
 // # CTA: clear-list
@@ -119,7 +106,7 @@ a.clear-list__btn:hover {
     color: $primary-color-70;
 }
 
-// ANIMATIONS (Pseudo Code)
+// ANIMATIONS (Pseudo Code) AKA "Element State"
 .settings__dropdown ul li ul li:hover,
 .settings__dropdown ul li ul li:focus,
 .settings__dropdown ul li ul li:active {
@@ -160,7 +147,6 @@ a.clear-list__btn:hover {
 
 // ANIMATIONS (Pseudo Codes)
 .settings__dropdown ul li .show-clear-list__btn i:hover {
-    // ! Color that holds
     background: $primary-color-05;
     color: $primary-color-70;
 }
@@ -170,7 +156,6 @@ a.clear-list__btn:hover {
 .settings__dropdown ul ul {
     position: absolute;
     top: 48px;
-    // right: -10px;
     right: 0px;
     min-height: 52.2px;
     min-width: 111px;
@@ -184,11 +169,8 @@ a.clear-list__btn:hover {
 // anchor tag "Clear List" button
 // * Hotfix center text "Clear List"
 a.clear-list__btn {
-    // width: 100%;
-    // height: 100%;
-    color: $text-color-90; // ? Under Considerations vs. #000000 vs. lighter shade
+    color: $text-color-90;
     position: absolute;
-    // top: 0;
     top: -12px;
     left: -1px;
     transform: translate(0%, 25%);
@@ -201,19 +183,8 @@ a.clear-list__btn {
     border: 1px solid $text-color-20;
 }
 
-.settings__dropdown ul,
-.settings__dropdown ul ul {
-    // border: 1px solid red;
-}
-
-// ! WIP <<
-
 // # CTA: Edit Task
 .fa-ellipsis-h {
-    // width: 16px;
-    // height: 4px;
-    // ? Redefine padding dimension with width and height? Check Affinity
-    // padding: 46px;
     color: $text-color-60;
     pointer-events: none;
 }
@@ -232,9 +203,6 @@ a.clear-list__btn {
 }
 
 // Form Task Module - "+ Add Task" button
-.add-task-form__btn {
-}
-
 .add-task-form__btn {
     color: $primary-color-05;
     background-color: $primary-color-70;
@@ -277,9 +245,7 @@ a.clear-list__btn {
     border: 1px solid $text-color-60;
     border-radius: 14px;
     padding: 15px 30px;
-    // border: 1px solid red;
     color: $text-color-60;
-    // top: 10px; // * Hotfix: align with heading "Form Task"
     text-align: center;
 }
 
@@ -304,7 +270,6 @@ a.clear-list__btn {
     height: 54px;
     border-radius: 14px;
     padding: 15px 30px;
-    // top: 10px; // * Hotfix: align with heading "Form Task"
     text-align: center;
     background-color: $warning-color-60;
 }
@@ -323,9 +288,7 @@ a.clear-list__btn {
     color: $warning-color-05;
     width: auto;
     margin-right: space.$desktop-space-lv-half;
-
 }
-
 
 // ANIMATIONS
 .delete-confirmation-confirm__btn:hover {
@@ -336,17 +299,9 @@ a.clear-list__btn {
     background-color: $warning-color-50;
 }
 
-
 @media screen and (max-width: 576px) {
     // # MAIN BUTTON COMPONENTS
     .text__btn {
-        // ? Redundant or not?, see at index.html file too (that's accompanied with 'form-task__btn')
-        // padding: {
-        //     top: 14px;
-        //     bottom: 14px;
-        //     left: 28px;
-        //     right: 28px;
-        // }
         height: 42px;
     }
 
@@ -357,7 +312,6 @@ a.clear-list__btn {
     }
 
     .form-task__btn {
-        // padding: 14px 28px;
         padding: 14px 14px;
         border-radius: 14px;
     }
@@ -397,15 +351,9 @@ a.clear-list__btn {
             top: 10px;
             bottom: 10px;
         }
-        // height: 36px;
     }
 
-    // ! WIP >>
     // # CTA: clear-list
-    // ! Testing >>
-
-    // ! << Testing
-
     // Match "trash" Icon Size - 36w x 36h
     .settings__dropdown ul {
         width: 36px;
@@ -425,14 +373,11 @@ a.clear-list__btn {
         position: relative;
         width: 36px;
         height: 36px;
-        // width: 46px; // ! Desktop dimensions
-        // height: 46px;
         text-align: center;
     }
 
     // ANIMATIONS (Pseudo Codes)
     .settings__dropdown ul li .show-clear-list__btn i:hover {
-        // ! Color that holds
         background: $primary-color-05;
         color: $primary-color-70;
     }
@@ -441,29 +386,22 @@ a.clear-list__btn {
     // * Stylize Dropdown
     .settings__dropdown ul ul {
         position: absolute;
-        // top: 37px;
         top: 36px;
-        // right: -1px;
         right: 0px;
         min-height: 41.3px;
-        // min-width: 115px;
         min-width: 90px;
     }
 
     .settings__dropdown ul li ul li {
         min-height: 41.3px;
-        // min-width: 115px;
         min-width: 90px;
     }
 
     // anchor tag "Clear List" button
     // * Hotfix center text "Clear List"
     a.clear-list__btn {
-        // width: 100%;
-        // height: 100%;
         color: $text-color-90; // ? Under Considerations vs. #000000 vs. lighter shade
         position: absolute;
-        // top: 0;
         top: -8px;
         left: 0;
         transform: translate(0%, 25%);
@@ -475,8 +413,6 @@ a.clear-list__btn {
         }
         border: 1px solid $text-color-20;
     }
-
-    // ! WIP <<
 
     // Module: Clear List
     // "No, Keep List" button
