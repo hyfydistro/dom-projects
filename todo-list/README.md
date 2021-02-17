@@ -34,8 +34,8 @@ Solution:
 
 1. Git init,
 2.
-    i. Add remote url (Github, Bitbucket, etc.)
-    ii. Initialise index.js file (or preferred other name) (optional)
+    a. Add remote url (Github, Bitbucket, etc.)
+    b. Initialise index.js file (or preferred other name) (optional)
 3. Npm init (i.e. will add remote url, main will add "index.js" file (if no other name is given))
 
 
