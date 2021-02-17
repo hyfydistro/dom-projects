@@ -52,15 +52,6 @@ const paths = {
     }
 };
 
-// ! WIP >>
-
-// const scriptWatchFiles = [
-//     'src/scripts/animations/*.js',
-//     'src/scripts/modules/*.js'
-// ];
-
-// ! <<
-
 // =====================
 // PRE-DEVELOPMENT STAGE
 // =====================
@@ -81,6 +72,7 @@ function copyAndMinifyHtml() {
 // Copy Minify PNG, JPEG, GIF and SVG with 'imagemin'
 function copyAndMinifyImages() {
     // prefix suggestions: *.{png, jpg, jpeg, gif, svg}
+    // Use RegExp
     return src('./src/images/*')
         .pipe(imagemin([
             imagemin.gifsicle({interlaced: true, optimizationLevel: 3}),
