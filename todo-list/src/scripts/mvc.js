@@ -24,7 +24,7 @@ const Storage = (function () {
     return {
         addItem: function (newTaskData) {
             // ! Log
-            console.log("persisting to LS...")
+            // console.log("persisting to LS...")
             let items;
 
             // Check for available item in LS
@@ -35,7 +35,7 @@ const Storage = (function () {
                 items.push(newTaskData);
 
                 // ! Log
-                console.log("Creating new Storage 'tasks'");
+                // console.log("Creating new Storage 'tasks'");
 
                 // Set LS
                 localStorage.setItem("tasks", JSON.stringify(items));
@@ -44,7 +44,7 @@ const Storage = (function () {
                 items = JSON.parse(localStorage.getItem("tasks"));
 
                 // ! Log
-                console.log("Getting available Storage: ", items);
+                // console.log("Getting available Storage: ", items);
 
                 // Push new item
                 items.push(newTaskData);
@@ -174,13 +174,13 @@ const Model = (function () {
         },
         addQuickTask: function (quickTaskInput) {
             // ! Log
-            console.log(quickTaskInput);
+            // console.log(quickTaskInput);
 
             // Create new task
             const newTaskData = new ModelConstructor(undefined, quickTaskInput);
 
             // ! Log
-            console.log(newTaskData);
+            // console.log(newTaskData);
 
             // Add to items Array
             data.items.push(newTaskData);
@@ -189,13 +189,13 @@ const Model = (function () {
         },
         addFormTask: function (taskInput, dateInput, memoInput, pinBoolean, colorSelect) {
             // ! Log
-            console.log(taskInput, dateInput, memoInput, pinBoolean, colorSelect);
+            // console.log(taskInput, dateInput, memoInput, pinBoolean, colorSelect);
 
             // Create new task
             const newTaskData = new ModelConstructor(undefined, taskInput, dateInput, memoInput, pinBoolean, colorSelect);
 
             // ! Log
-            console.log(newTaskData);
+            // console.log(newTaskData);
 
             // Add to items Array
             data.items.push(newTaskData);
@@ -213,7 +213,7 @@ const Model = (function () {
             });
 
             // ! Log
-            console.log("Fetching targeted item is", targetTaskData);
+            // console.log("Fetching targeted item is", targetTaskData);
 
             return targetTaskData;
         },
@@ -251,7 +251,7 @@ const Model = (function () {
                     item.completed = completedStatus;
 
                     // ! Log
-                    console.log("Current task complete is", item.completed)
+                    // console.log("Current task complete is", item.completed)
 
                     targetTaskData = item;
                 }
@@ -261,7 +261,7 @@ const Model = (function () {
         },
         deleteItem: function (id) {
             // ! Log
-            console.log("Deleting data...")
+            // console.log("Deleting data...")
 
             // Get an Array of ids
             const ids = data.items.map(function (item) {
@@ -342,7 +342,7 @@ const View = (function () {
         listComponent.id = taskData["id"];
 
         // ! Log
-        console.log(listComponent.id);
+        // console.log(listComponent.id);
 
         // List Component - First Block
         const listComponentFirstBlock = document.createElement("div");
@@ -376,7 +376,7 @@ const View = (function () {
         checkboxIcon.classList.add("check");
 
         // ! Log
-        console.log("CheckboxIcon", checkboxIcon.checked);
+        // console.log("CheckboxIcon", checkboxIcon.checked);
 
         // Checkbox - Label
         const checkboxLabel = document.createElement("span");
@@ -387,9 +387,9 @@ const View = (function () {
         checkboxLabel.append(checkboxLabelText);
 
         // ! Log
-        console.log("rendering label:", checkboxLabel);
-        console.log("rendering label text:", checkboxLabelText);
-        console.log("rendering label text data:", taskData["title"]);
+        // console.log("rendering label:", checkboxLabel);
+        // console.log("rendering label text:", checkboxLabelText);
+        // console.log("rendering label text data:", taskData["title"]);
 
         checkboxComponent.appendChild(checkboxIcon);
         checkboxComponent.appendChild(checkboxLabel);
@@ -465,7 +465,7 @@ const View = (function () {
         listComponent.appendChild(listComponentSecondBlock);
 
         // ! Log
-        console.log(listComponent);
+        // console.log(listComponent);
 
         return listComponent;
     }
@@ -474,7 +474,7 @@ const View = (function () {
     return {
         populateList: function (items, completedStatus) {
             // ! Log
-            console.log("The Completed Status is", completedStatus);
+            // console.log("The Completed Status is", completedStatus);
 
             // If completed status is available,
             // populate for BOTH Main List and Completed List
@@ -486,12 +486,12 @@ const View = (function () {
                     let task = render(item);
 
                     // ! Log
-                    console.log("populating:", task);
+                    // console.log("populating:", task);
 
                     // Filter Main List and Completed List
                     if (item.completed === false) {
                         // ! Log
-                        console.log("populatin Main list...")
+                        // console.log("populatin Main list...")
 
                         if (item.pin) {
                             document.querySelector(UISelectors.mainList).insertAdjacentElement("afterbegin", task);
@@ -500,7 +500,7 @@ const View = (function () {
                         }
                     } else {
                         // ! Log
-                        console.log("populating Completed list...")
+                        // console.log("populating Completed list...")
 
                         // Append to Completed List
                         if (item.pin) {
@@ -513,7 +513,7 @@ const View = (function () {
             } else {
                 View.hideCompletedList();
                 // ! Log
-                console.log("No Completed List, populatin Main list...")
+                // console.log("No Completed List, populatin Main list...")
 
                 items.forEach(function (item) {
                     let task = render(item);
@@ -561,14 +561,14 @@ const View = (function () {
         },
         openFormTask: function () {
             // ! Log
-            console.log("open Form Task");
+            // console.log("open Form Task");
 
             document.querySelector(UISelectors.overlay).classList.remove("hidden");
             document.querySelector(UISelectors.addForm).classList.remove("hidden");
         },
         closeFormTask: function () {
             // ! Log
-            console.log("Close Form Task");
+            // console.log("Close Form Task");
 
             document.querySelector(UISelectors.overlay).classList.add("hidden");
             document.querySelector(UISelectors.addForm).classList.add("hidden");
@@ -580,7 +580,7 @@ const View = (function () {
             let formatDate = UIElements.addFormDateInput.value.replaceAll("-", "/");
 
             // ! Log
-            console.log("date format", formatDate);
+            // console.log("date format", formatDate);
 
             return formatDate;
         },
@@ -594,45 +594,45 @@ const View = (function () {
             let colorValue;
 
             // ! Log
-            console.log("color Red is", UIElements.addFormColorInputRed.checked);
-            console.log("color Yellow is", UIElements.addFormColorInputYellow.checked);
-            console.log("color Blue is", UIElements.addFormColorInputBlue.checked);
-            console.log("color Green is", UIElements.addFormColorInputGreen.checked);
-            console.log("color None is", UIElements.addFormColorInputNone.checked);
+            // console.log("color Red is", UIElements.addFormColorInputRed.checked);
+            // console.log("color Yellow is", UIElements.addFormColorInputYellow.checked);
+            // console.log("color Blue is", UIElements.addFormColorInputBlue.checked);
+            // console.log("color Green is", UIElements.addFormColorInputGreen.checked);
+            // console.log("color None is", UIElements.addFormColorInputNone.checked);
 
             // Find Value
             if (UIElements.addFormColorInputRed.checked || UIElements.addFormColorInputYellow.checked || UIElements.addFormColorInputBlue.checked || UIElements.addFormColorInputGreen.checked || UIElements.addFormColorInputNone.checked) {
                 if (UIElements.addFormColorInputRed.checked) {
                     // ! Log
-                    console.log("If - red");
+                    // console.log("If - red");
 
                     colorValue = UIElements.addFormColorInputRed.value;
                 }
 
                 if (UIElements.addFormColorInputYellow.checked) {
                     // ! Log
-                    console.log("If - yellow");
+                    // console.log("If - yellow");
 
                     colorValue = UIElements.addFormColorInputYellow.value;
                 }
 
                 if (UIElements.addFormColorInputBlue.checked) {
                     // ! Log
-                    console.log("If - yellow");
+                    // console.log("If - yellow");
 
                     colorValue = UIElements.addFormColorInputBlue.value;
                 }
 
                 if (UIElements.addFormColorInputGreen.checked) {
                     // ! Log
-                    console.log("If - yellow");
+                    // console.log("If - yellow");
 
                     colorValue = UIElements.addFormColorInputGreen.value;
                 }
 
                 if (UIElements.addFormColorInputNone.checked) {
                     // ! Log
-                    console.log("If - none");
+                    // console.log("If - none");
 
                     colorValue = UIElements.addFormColorInputNone.value;
                 }
@@ -641,7 +641,7 @@ const View = (function () {
             }
 
             // ! Log
-            console.log("color", colorValue);
+            // console.log("color", colorValue);
 
             return colorValue;
         },
@@ -685,14 +685,14 @@ const View = (function () {
         },
         openEditTask: function () {
             // ! Log
-            console.log("open Edit Task");
+            // console.log("open Edit Task");
 
             document.querySelector(UISelectors.overlay).classList.remove("hidden");
             document.querySelector(UISelectors.editForm).classList.remove("hidden");
         },
         closeEditTask: function () {
             // ! Log
-            console.log("Close Edit Task");
+            // console.log("Close Edit Task");
 
             document.querySelector(UISelectors.overlay).classList.add("hidden");
             document.querySelector(UISelectors.editForm).classList.add("hidden");
@@ -705,7 +705,7 @@ const View = (function () {
             let formatDate = UIElements.editFormDateInput.value.replaceAll("-", "/");
 
             // ! Log
-            console.log("date format in Edit Task", formatDate);
+            // console.log("date format in Edit Task", formatDate);
 
             return formatDate;
         },
@@ -719,25 +719,25 @@ const View = (function () {
             let colorValue;
 
             // ! Log
-            console.log("Checking in Edit Task...")
-            console.log("Checking in Edit Task...")
-            console.log("color Red is", UIElements.editFormColorInputRed.checked);
-            console.log("color Yellow is", UIElements.editFormColorInputYellow.checked);
-            console.log("color Blue is", UIElements.editFormColorInputBlue.checked);
-            console.log("color Green is", UIElements.addFormColorInputGreen.checked);
-            console.log("color None is", UIElements.addFormColorInputNone.checked);
+            // console.log("Checking in Edit Task...")
+            // console.log("Checking in Edit Task...")
+            // console.log("color Red is", UIElements.editFormColorInputRed.checked);
+            // console.log("color Yellow is", UIElements.editFormColorInputYellow.checked);
+            // console.log("color Blue is", UIElements.editFormColorInputBlue.checked);
+            // console.log("color Green is", UIElements.addFormColorInputGreen.checked);
+            // console.log("color None is", UIElements.addFormColorInputNone.checked);
 
             // Find Value
             switch (UIElements.editFormColorInputRed.checked || UIElements.editFormColorInputYellow.checked || UIElements.editFormColorInputBlue.checked || UIElements.editFormColorInputGreen.checked || UIElements.editFormColorInputNone.checked) {
                 case UIElements.editFormColorInputRed.checked:
                     // ! Log
-                    console.log("Switch - red");
+                    // console.log("Switch - red");
 
                     colorValue = UIElements.editFormColorInputRed.value;
                     break;
                 case UIElements.editFormColorInputYellow.checked:
                     // ! Log
-                    console.log("Switch - yellow");
+                    // console.log("Switch - yellow");
 
                     colorValue = UIElements.editFormColorInputYellow.value;
                     break;
@@ -746,13 +746,13 @@ const View = (function () {
                     break;
                 case UIElements.editFormColorInputGreen.checked:
                     // ! Log
-                    console.log("Switch - green");
+                    // console.log("Switch - green");
 
                     colorValue = UIElements.editFormColorInputGreen.value;
                     break;
                 default:
                     // ! Log
-                    console.log("Switch - default none");
+                    // console.log("Switch - default none");
 
                     colorValue = UIElements.editFormColorInputNone.value;
             }
@@ -768,7 +768,7 @@ const View = (function () {
             let taskComponents = document.querySelectorAll(UISelectors.listComponent);
 
             // ! Log
-            console.log("Looping:", taskComponents);
+            // console.log("Looping:", taskComponents);
 
             // Turn Node list into array
             taskComponents = Array.from(taskComponents);
@@ -777,17 +777,17 @@ const View = (function () {
                 const taskId = taskComponent.id;
 
                 // ! Log
-                console.log("pass id", taskId);
+                // console.log("pass id", taskId);
 
                 if (taskId == updateTaskData.id) {
                     // Update UI
                     const currentTaskComponentUI = document.getElementById(`${taskId}`);
 
                     // ! Log
-                    console.log(currentTaskComponentUI);
+                    // console.log(currentTaskComponentUI);
 
                     // ! Log
-                    console.log("using data", updateTaskData);
+                    // console.log("using data", updateTaskData);
 
                     let newDisplayTaskComponent = render(updateTaskData);
 
@@ -918,7 +918,7 @@ const Controller = (function (Model, View, Storage) {
     // Add Quick "Add Task" submit
     const quickAddTaskSubmit = function (e) {
         // ! Log
-        console.log("Quick Add Task")
+        // console.log("Quick Add Task")
 
         // Get input value
         const input = View.getQuickTaskInput();
@@ -927,7 +927,7 @@ const Controller = (function (Model, View, Storage) {
         // ? Suggestions: Use RegExp
         if (input !== "") {
             // ! Log
-            console.log("Quick Add Task: Validating")
+            // console.log("Quick Add Task: Validating")
 
             // Add input value to Data, and
             // Get default data setup for UI
@@ -944,7 +944,7 @@ const Controller = (function (Model, View, Storage) {
         }
 
         // ! Log
-        console.log(input);
+        // console.log(input);
 
         e.preventDefault();
     };
@@ -952,7 +952,7 @@ const Controller = (function (Model, View, Storage) {
     // Add "Form Task" Submit
     const formTaskSubmit = function (e) {
         // ! Log
-        console.log("Form Task - Add Customised Task");
+        // console.log("Form Task - Add Customised Task");
 
         // Get Values
         const taskInput = View.getFormTaskTaskInput();
@@ -966,7 +966,7 @@ const Controller = (function (Model, View, Storage) {
         // ? Suggestions: Use RegExp
         if (taskInput !== "") {
             // ! Log
-            console.log("Form Task: Validating")
+            // console.log("Form Task: Validating")
 
             // Add input value to Data, and
             // Get default data setup for UI
@@ -998,19 +998,19 @@ const Controller = (function (Model, View, Storage) {
         // use event delegation via `e.target` to find element
         if (e.target.classList.contains("ellipses__wrapper")) {
             // ! Log
-            console.log("Edit Clicked!");
+            // console.log("Edit Clicked!");
 
             // Get task component id
             const currentTaskId = e.target.parentNode.parentNode.id;
 
             // ! Log
-            console.log("current task ID", currentTaskId);
+            // console.log("current task ID", currentTaskId);
 
             // Get task component id from Data
             const TasktoEditData = Model.getTaskById(currentTaskId);
 
             // ! Log
-            console.log(TasktoEditData);
+            // console.log(TasktoEditData);
 
             // Set task component as "currentItem" i.e. makes locating it easier and etc.
             // ... and editing purpose
@@ -1026,7 +1026,7 @@ const Controller = (function (Model, View, Storage) {
         e.preventDefault();
 
         // ! Log
-        console.log("Updating!");
+        // console.log("Updating!");
 
         // Get Edit Task Inputs and Values
         const taskInput = View.getEditTaskTaskInput();
@@ -1039,7 +1039,7 @@ const Controller = (function (Model, View, Storage) {
         const updateTaskData = Model.updateDataFromEditTask(taskInput, dateInput, memoInput, pinBoolean, colorSelect);
 
         // ! Log
-        console.log("new Update data applied to database", updateTaskData)
+        // console.log("new Update data applied to database", updateTaskData)
 
         // Update item LS
         Storage.updateItem(updateTaskData);
@@ -1056,7 +1056,7 @@ const Controller = (function (Model, View, Storage) {
         const currentTask = Model.getCurrentItem();
 
         // ! Log
-        console.log("Attempting to delete", currentTask);
+        // console.log("Attempting to delete", currentTask);
 
         // Delete from data structure
         Model.deleteItem(currentTask.id);
@@ -1081,13 +1081,13 @@ const Controller = (function (Model, View, Storage) {
             const currentTaskId = e.target.parentNode.parentNode.parentNode.id;
 
             // ! Log
-            console.log("current task ID", currentTaskId);
+            // console.log("current task ID", currentTaskId);
 
             // Get task component id from Data
             const TasktoEditData = Model.getTaskById(currentTaskId);
 
             // ! Log
-            console.log(TasktoEditData);
+            // console.log(TasktoEditData);
 
             Model.setCurrentTask(TasktoEditData);
 
@@ -1145,7 +1145,8 @@ const Controller = (function (Model, View, Storage) {
     // Public Methods
     return {
         init: function () {
-            console.log("Initialising App...")
+            // ! Log
+            // console.log("Initialising App...")
 
             // Fetch items from data structure
             const items = Model.getItems();
