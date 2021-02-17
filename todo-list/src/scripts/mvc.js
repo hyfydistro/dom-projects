@@ -1,10 +1,8 @@
-// Other Modules
-// const uuid = uuidv4;
-// const getUniqueId = uuidv4;
+// Model - View - Controller (MVC) Pattern used + StorageCtrl with LocalStorage interactions
 
 // todo
-// Implemet the "Task Form" MVC
-// FInd out why you cannot mark 'checked' on the checkbox
+// Clean Code and comments
+
 
 function getUniqueId() {
     if (window.crypto && window.crypto.getRandomValues) {
@@ -14,10 +12,12 @@ function getUniqueId() {
     }
 }
 
+
 // ==================
 // Storage Controller
 // ==================
 // - Local Storage
+// NB: "item" may also be referred to data from LocalStorage
 const Storage = (function () {
 
     // Public methods
@@ -27,7 +27,7 @@ const Storage = (function () {
             console.log("persisting to LS...")
             let items;
 
-            // Check if there is any data in LS
+            // Check for available item in LS
             if (localStorage.getItem("tasks") === null) {
                 items = [];
 
@@ -40,7 +40,7 @@ const Storage = (function () {
                 // Set LS
                 localStorage.setItem("tasks", JSON.stringify(items));
             } else {
-                // Get data if available
+                // Get available item in LS
                 items = JSON.parse(localStorage.getItem("tasks"));
 
                 // ! Log
@@ -55,6 +55,7 @@ const Storage = (function () {
         },
         getItems: function () {
             let items;
+
             if (localStorage.getItem("tasks") === null) {
                 items = [];
 
@@ -91,9 +92,11 @@ const Storage = (function () {
         }
     }
 })();
-// ========================
-// Item Controller || Model
-// ========================
+
+
+// =====
+// Model
+// =====
 // - Local Data
 const Model = (function () {
     // Model Constructor
@@ -107,7 +110,8 @@ const Model = (function () {
         this.completed = completed;
     };
 
-    // Data Structure / State
+    // Data Structure
+    // - state: "completed", "pin"
     const data = {
         // items: [
         //     {
@@ -242,7 +246,8 @@ const Model = (function () {
 
             data.items.forEach(function (item) {
                 if (item.id == data.currentItem.id) {
-                    // Set mark completed "true"
+
+                    // Set property "completed" to `true`
                     item.completed = completedStatus;
 
                     // ! Log
@@ -257,7 +262,8 @@ const Model = (function () {
         deleteItem: function (id) {
             // ! Log
             console.log("Deleting data...")
-            // Get an array of ids
+
+            // Get an Array of ids
             const ids = data.items.map(function (item) {
                 return item.id;
             });
@@ -272,10 +278,9 @@ const Model = (function () {
 })();
 
 
-// =====================
-// UI Controller || View
-// =====================
-
+// ====
+// View
+// ====
 // - Anything to do with the UI
 const View = (function () {
     // UI selectors' name
@@ -332,6 +337,7 @@ const View = (function () {
     const render = function (taskData) {
         const listComponent = document.createElement("div");
         listComponent.classList.add("list-component");
+
         // Add Unique ID
         listComponent.id = taskData["id"];
 
@@ -368,6 +374,7 @@ const View = (function () {
         checkboxIcon.type = "checkbox";
         checkboxIcon.checked = taskData["completed"];
         checkboxIcon.classList.add("check");
+
         // ! Log
         console.log("CheckboxIcon", checkboxIcon.checked);
 
@@ -445,8 +452,6 @@ const View = (function () {
             // Memo - Create TextNode
             const memoText = document.createTextNode(taskData["memo"]);
             memoSpan.append(memoText);
-
-            // listComponentSecondBlock.classList.remove("hidden");
         } else {
             listComponentSecondBlock.classList.add("hidden");
         }
@@ -468,14 +473,14 @@ const View = (function () {
     // Public Methods
     return {
         populateList: function (items, completedStatus) {
-            // !! Testing Required
-
             // ! Log
             console.log("The Completed Status is", completedStatus);
 
-            // If there is completed status, populate for both Main List and Completed List
+            // If completed status is available,
+            // populate for BOTH Main List and Completed List
+            // If not, populate for Main List ONLY
             if (completedStatus) {
-                // Show completed list
+                // Show Completed List
                 View.showCompletedList();
                 items.forEach(function (item) {
                     let task = render(item);
@@ -488,10 +493,6 @@ const View = (function () {
                         // ! Log
                         console.log("populatin Main list...")
 
-                        // Append to Main List
-                        // ? Use "append" or "appendChild"
-                        // document.querySelector(UISelectors.mainList).appendChild()
-
                         if (item.pin) {
                             document.querySelector(UISelectors.mainList).insertAdjacentElement("afterbegin", task);
                         } else {
@@ -500,6 +501,7 @@ const View = (function () {
                     } else {
                         // ! Log
                         console.log("populating Completed list...")
+
                         // Append to Completed List
                         if (item.pin) {
                             document.querySelector(UISelectors.completedList).firstElementChild.insertAdjacentElement("afterend", task)
@@ -509,14 +511,10 @@ const View = (function () {
                     }
                 });
             } else {
-
                 View.hideCompletedList();
                 // ! Log
                 console.log("No Completed List, populatin Main list...")
 
-                // Append to Main List
-                // ? Use "append" or "appendChild"
-                // document.querySelector(UISelectors.mainList).appendChild()
                 items.forEach(function (item) {
                     let task = render(item);
 
@@ -543,7 +541,6 @@ const View = (function () {
             const newTask = render(newTaskData);
 
             // Insert new list component to DOM
-            // mainList.appendChild(listComponent);
             document.querySelector(UISelectors.mainList).insertAdjacentElement('beforeend', newTask);
         },
         addTaskToMainListPinned: function (newTaskData) {
@@ -551,7 +548,6 @@ const View = (function () {
             const newTask = render(newTaskData);
 
             // Insert new list component to DOM
-            // mainList.appendChild(listComponent);
             document.querySelector(UISelectors.mainList).insertAdjacentElement('afterbegin', newTask);
         },
         clearQuickAddTaskInput: function () {
@@ -576,8 +572,6 @@ const View = (function () {
 
             document.querySelector(UISelectors.overlay).classList.add("hidden");
             document.querySelector(UISelectors.addForm).classList.add("hidden");
-
-            // ? Clear / reset input fields
         },
         getFormTaskTaskInput: function () {
             return UIElements.addFormTaskInput.value;
@@ -645,7 +639,6 @@ const View = (function () {
             } else {
                 colorValue = UIElements.addFormColorInputNone.value;
             }
-
 
             // ! Log
             console.log("color", colorValue);
@@ -781,7 +774,6 @@ const View = (function () {
             taskComponents = Array.from(taskComponents);
 
             taskComponents.forEach((taskComponent) => {
-                // const taskId = taskComponent.getAttribute('id');
                 const taskId = taskComponent.id;
 
                 // ! Log
@@ -799,7 +791,6 @@ const View = (function () {
 
                     let newDisplayTaskComponent = render(updateTaskData);
 
-                    // !! Testing needed for Completed Tasks >>
                     // Check if new task is completed
                     if (updateTaskData.completed == true) {
                         // Check if completed task is pinned
@@ -811,9 +802,7 @@ const View = (function () {
                             currentTaskComponentUI.remove();
                         } else {
                             // Add new and update task component
-                            // currentTaskComponentUI.insertAdjacentElement("afterend",newDisplayTaskComponent);
                             currentTaskComponentUI.parentNode.replaceChild(newDisplayTaskComponent, currentTaskComponentUI);
-                            // !! <<
                         }
                     } else {
                         // Check if uncompleted task is true
@@ -834,7 +823,6 @@ const View = (function () {
             })
         },
         deleteTaskDisplayFromEditTask: function (id) {
-            // document.querySelector(`[id="${id}"]`).remove();
             document.getElementById(id).remove();
 
             View.closeEditTask();
@@ -863,9 +851,9 @@ const View = (function () {
 })();
 
 
-// ============================
-// App Controller || Controller
-// ============================
+// ==========
+// Controller
+// ==========
 // - main controller
 // - Where everything will meet
 // - initial event listeners
@@ -914,7 +902,7 @@ const Controller = (function (Model, View, Storage) {
         document.querySelector(UISelectors.deleteConfirmBtn).addEventListener("click", clearLists);
 
 
-
+        // ? Feature - yes, no, yes, no?
         // Disable submit on "Enter" key for "Form Task" and "Edit Task" Inputs
         // Otherwise, catastrophe may follow
         // document.addEventListener("keypress", function(e) {
@@ -1007,17 +995,7 @@ const Controller = (function (Model, View, Storage) {
 
     // Open and set "Edit Task" module
     const clickedEditTask = function (e) {
-        // use event delegation via e.target to find element
-        // traverse the DOM to find id
-        // get current task data to edit via Model.getItemById
-        // - It should be an object
-        // Set current item via Model.setCurrentItem
-        // - set data 'currentItem' as above line
-        // Ad item to form via View.addItemToForm()
-        // - grab values
-        //     - grab 'currentItem' and set it in View
-        //     - Create Model.getCurrentItem function
-
+        // use event delegation via `e.target` to find element
         if (e.target.classList.contains("ellipses__wrapper")) {
             // ! Log
             console.log("Edit Clicked!");
@@ -1040,24 +1018,15 @@ const Controller = (function (Model, View, Storage) {
 
             // Add current task component data to "Edit Task" Form to display
             View.addItemtoEditTask();
-
         }
     };
 
-    // todo
     // Update "Edit Task" Submit
     const editTaskSubmit = function (e) {
         e.preventDefault();
 
         // ! Log
         console.log("Updating!");
-
-        // ! WIP >>
-        // - Create following View methods
-        // - Create following Model metho
-
-        // guide from Brad T
-        // https://www.udemy.com/course/modern-javascript-from-the-beginning/learn/lecture/8762558#overview
 
         // Get Edit Task Inputs and Values
         const taskInput = View.getEditTaskTaskInput();
@@ -1066,7 +1035,6 @@ const Controller = (function (Model, View, Storage) {
         const pinBoolean = View.getEditTaskPinBoolean();
         const colorSelect = View.getEditTaskColorSelect();
 
-        // ? Rename const variable
         // Update component task in data
         const updateTaskData = Model.updateDataFromEditTask(taskInput, dateInput, memoInput, pinBoolean, colorSelect);
 
@@ -1106,11 +1074,6 @@ const Controller = (function (Model, View, Storage) {
     const checkedTaskAndUpateData = function (e) {
 
         if (e.target.classList.contains("check")) {
-            // console.log("clicked on:", e.target.classList.contains("check"));
-            // console.log(e.target);
-            // console.log(e.target.checked);
-            // const checkbox = e.target;
-
             let completedStatus = e.target.checked;
             console.log(completedStatus);
 
@@ -1146,13 +1109,10 @@ const Controller = (function (Model, View, Storage) {
                 // Check if there is any "completed" task equal 'true'
                 let completedStatus = findCompletedStatus(items);
 
-                // Update UI
                 // Clear UI
                 View.clearLists();
 
-                //todo - bookmark
-                // Push UNCHECK task to Main List - basically a page refresh
-                // setTimeout(View.populateList(items, completedStatus), 20000);
+                // Repopulate UI with update data
                 View.populateList(items, completedStatus)
             }
         }
