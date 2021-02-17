@@ -10,7 +10,7 @@ Objective:
 * Edit State / Module
 * Create / Add State / Module
 * Clear All button
-* Filter List [REJECTEd]
+* Filter List [REJECTED]
 * "Completed" or checked tasks update UI
 
 Optional:
@@ -33,8 +33,9 @@ Solution:
 ## Initialising Repo
 
 1. Git init,
-2.1 Add remote url (Github, Bitbucket, etc.)
-2.2 Initialise index.js file (or preferred other name) (optional)
+2.
+    i. Add remote url (Github, Bitbucket, etc.)
+    ii. Initialise index.js file (or preferred other name) (optional)
 3. Npm init (i.e. will add remote url, main will add "index.js" file (if no other name is given))
 
 
@@ -100,8 +101,8 @@ Mobile, Tablet (lesser priority) and Desktop (main) devices.
 - [x] IE 11
 
 - [ ] Progressive Web Application **PWA** [pending]
-      - [ ] Service Worker
-      - [ ] Manifest file
+    - [ ] Service Worker
+    - [ ] Manifest file
 
 - [ ] Graceful Degradation / *Progressive Enhancement* **PE** [pending]
     - CSS PE
