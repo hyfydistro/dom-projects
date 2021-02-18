@@ -86,7 +86,7 @@ label {
     width: 67px; // ? Maybe want maybe not... test with large dates and compare alignments with other lists
     text-align: center;
     margin-left: auto;
-    margin-right: space.$mobile-space-lv-1;
+    margin-right: calc(#{space.$mobile-space-lv-1} * 2);
 }
 
 // Due-Date Text

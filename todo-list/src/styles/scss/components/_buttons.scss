@@ -166,6 +166,13 @@ a.clear-list__btn:hover {
     min-width: 111px;
 }
 
+.delete-confirmation-confirm__btn--text,
+.delete-confirmation-confirm__btn,
+.delete-confirmation-cancel__btn--text,
+.delete-confirmation-cancel__btn {
+    outline: none;
+}
+
 // anchor tag "Clear List" button
 // * Hotfix center text "Clear List"
 a.clear-list__btn {

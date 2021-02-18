@@ -37,7 +37,7 @@
 }
 
 // FONT FACE
-$primary-fontface: "quicksand", sans-serif,'Tahoma';
+$primary-fontface: "quicksand", "Roboto",'Tahoma';
 $secondary-fontface: "myanmar text", sans-serif,'Arial';
 $text-fontface: "myanmar text", sans-serif,'Arial';
 
@@ -73,17 +73,17 @@ $desktop-body-text-scale-ratio: 1.2;
 html {
     font-size: $desktop-base-font-size;
     h1 {
-        font-family: "quicksand";
+        font-family: $primary-fontface;
         font-weight: normal;
         line-height: calc(1rem * #{$desktop-header-text-scale-ratio} * #{$desktop-header-text-scale-ratio} * #{$desktop-header-text-scale-ratio} * 1.1);
     }
     h2 {
-        font-family: "quicksand";
+        font-family: $primary-fontface;
         font-weight: normal;
         line-height: calc(1rem * #{$desktop-header-text-scale-ratio} * #{$desktop-header-text-scale-ratio} * 1.1);
     }
     h3 {
-        font-family: "quicksand";
+        font-family: $primary-fontface;
         font-weight: normal;
     }
     p,
