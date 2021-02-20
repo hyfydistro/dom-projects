@@ -1,9 +1,6 @@
 @use '../base/space' as space;
 @use '../base/color' as *;
 
-body {
-    background-color: bisque;
-}
 
 .app-container {
     background: #FFFFFF;
@@ -36,13 +33,17 @@ body {
         display: block;
         text-align: center;
         margin: 0 auto;
-        padding-top: space.$desktop-space-lv-2;
-        padding-bottom: space.$desktop-space-lv-2;
+        // padding-top: space.$desktop-space-lv-2;
+        // padding-bottom: space.$desktop-space-lv-2;
     }
 
 }
 
 @media screen and (max-width: 600px) {
+    .app-container {
+        padding-top: space.$mobile-space-lv-2;
+    }
+
     h1.title {
         display: inherit;
     }

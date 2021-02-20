@@ -17,6 +17,19 @@
 
 .list-component {
     margin-bottom: space.$desktop-space-lv-half;
+    animation: slide-in 0.4s ease;
+}
+
+// ANIMATION: animate when created
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .list-component__first-block {

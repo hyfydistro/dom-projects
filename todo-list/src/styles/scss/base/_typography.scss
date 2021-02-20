@@ -38,8 +38,8 @@
 
 // FONT FACE
 $primary-fontface: "quicksand", "Roboto",'Tahoma';
-$secondary-fontface: "myanmar text", sans-serif,'Arial';
-$text-fontface: "myanmar text", sans-serif,'Arial';
+$secondary-fontface: "myanmar text", "Raleway",'Arial';
+$text-fontface: "myanmar text", "Raleway",'Arial';
 
 // BASE VALUE
 $mobile-base-font-size: 15px;
@@ -90,7 +90,7 @@ html {
     span,
     a,
     #due-date__input {
-        font-family: "myanmar text";
+        font-family: $secondary-fontface;
         font-weight: normal;
         font-size: $desktop-base-font-size;
         line-height: 1.5;
@@ -100,7 +100,7 @@ html {
     .module__label,
     .color-change__selection--none::before,
     textarea#memo__input {
-        font-family: "myanmar text";
+        font-family: $secondary-fontface;
     }
     header {
         h1 {

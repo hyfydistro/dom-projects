@@ -64,7 +64,7 @@ html p,
 html span,
 html a,
 html #due-date__input {
-  font-family: "myanmar text";
+  font-family: "myanmar text", "Raleway", "Arial";
   font-weight: normal;
   font-size: 20px;
   line-height: 1.5;
@@ -74,7 +74,7 @@ html ul li,
 html .module__label,
 html .color-change__selection--none::before,
 html textarea#memo__input {
-  font-family: "myanmar text";
+  font-family: "myanmar text", "Raleway", "Arial";
 }
 html header h1 {
   font-size: calc(1rem * 1.2 * 1.2 * 1.2);
@@ -159,10 +159,6 @@ html main a.module-update__btn span {
     top: -6px;
   }
 }
-body {
-  background-color: bisque;
-}
-
 .app-container {
   background: #FFFFFF;
   max-width: 768px;
@@ -189,11 +185,13 @@ body {
     display: block;
     text-align: center;
     margin: 0 auto;
-    padding-top: calc(20px * 1.5 * 1.5);
-    padding-bottom: calc(20px * 1.5 * 1.5);
   }
 }
 @media screen and (max-width: 600px) {
+  .app-container {
+    padding-top: calc(15px * 1.5 * 1.5);
+  }
+
   h1.title {
     display: inherit;
   }
@@ -263,8 +261,19 @@ nav .settings__dropdown {
 
 .list-component {
   margin-bottom: calc(20px / 1.5);
+  animation: slide-in 0.4s ease;
 }
 
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .list-component__first-block {
   display: flex;
   align-items: center;
